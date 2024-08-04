@@ -9,7 +9,7 @@
 }
 
 .padding-top{
-   padding-top:3%;
+   padding-top:2%;
 }
 
 .padding-right{
@@ -23,7 +23,7 @@
   padding-bottom: .5%;
 }
 
-.main-introduction-size{
+.main-introduction-font-size{
   font-size: 400%;
   font-weight: bolder;
 }
@@ -35,4 +35,47 @@
 
 .container-size{
   width: 50%;
+}
+
+.main-introduction-container-size{
+  width: 70%;
+}
+
+.secondary-introduction-font-size{
+  font-size: 150%;
+}
+
+.third-introduction-font-size{
+  font-size: 100%;
+}
+
+.third-intro-border-bottom{
+  border-bottom: 5px solid black;
+}
+
+.showcase-font-size{
+    font-size: 225%;
+    font-weight: bold;
+}
+
+.button-style{
+    width: 50%;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    border: 5px solid black;
+}
+
+.align-left{
+  float: left;
+  border: 5px solid black;
+}
+
+.align-right{
+  float: right;
+  border: 5px solid black;
+}
+
+.button-container{
+  width:10%
 }
