@@ -1,0 +1,38 @@
+/* styles.css */
+.navbar-border {
+  border: 5px solid black;
+}
+
+.bold-large-text {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  font-weight: bold;
+}
+
+.padding-top{
+   padding-top:3%;
+}
+
+.padding-right{
+  padding-right: 5%;
+}
+
+.padding-around{
+  padding-top: .5%;
+  padding-left: .5%;
+  padding-right: .5%;
+  padding-bottom: .5%;
+}
+
+.main-introduction-size{
+  font-size: 400%;
+  font-weight: bolder;
+}
+
+.center-text {
+  text-align: center;
+  margin: 0 auto; /* Center block-level elements horizontally */
+}
+
+.container-size{
+  width: 50%;
+}
