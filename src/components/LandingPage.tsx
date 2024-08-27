@@ -4,12 +4,14 @@ import '../styles/MainPage.css'; // Import the CSS file
 import DarkModeToggle from './DarkModeToggle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSkull } from '@fortawesome/free-solid-svg-icons';
+import { faRocket } from '@fortawesome/free-solid-svg-icons';
+import { faMeteor } from '@fortawesome/free-solid-svg-icons'; // Replace with the chosen icon
 import { faLinkedin, faGithub, faInstagram, faReact } from '@fortawesome/free-brands-svg-icons';
 import { faCoffee, faLeaf } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import { ThemeProviderWrapper } from './DarkModeToggle';
 import ReactSwipe from 'react-swipe';
-import { Button } from 'react-bootstrap';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
 
 const CenteredContainer = styled.div`
   display: flex;
@@ -128,6 +130,91 @@ const LandingPage: React.FC = () => {
           </ReactSwipe>
 
         </div>
+      </CenteredContainer>
+      <CenteredContainer className="container-size">
+        <div className="main-introduction-container-size">
+          <div className="showcase-font-size secondary-introduction-font-size padding-top">
+            <p>Services I offer.</p>
+          </div>
+          <div className="secondary-introduction-font-size">
+            <p>I usually work with the following technologies, though I'm framework agnostic and always open to learning new things.</p>
+          </div>
+        </div>
+      </CenteredContainer>
+      <CenteredContainer className="container-size">
+        <div className="box-design-container">
+          <div className="box-designs">Angular</div>
+          <div className="box-designs">React</div>
+          <div className="box-designs">Typescript</div>
+          <div className="box-designs">Springboot</div>
+          <div className="box-designs">Java</div>
+          <div className="box-designs">Microservices</div>
+          <div className="box-designs">C#</div>
+          <div className="box-designs">GraphQl</div>
+        </div>
+      </CenteredContainer>
+      <CenteredContainer className="card-container-size">
+        <div className="card-design-container">
+          <div className="card-designs">
+            <p className="icon-size"><FontAwesomeIcon icon={faMeteor} /></p>
+            <p>Fixed Cost</p>
+            <p>Web Application Design & Development</p>
+            <p>I am an expert in creating stunning and functional</p>
+            <p>web applications that bring your ideas to life. I will</p>
+            <p>design and develop a customized solution tailored to</p>
+            <p>your unique needs!</p>
+          </div>
+          <div className="card-designs">
+            <p className="icon-size"><FontAwesomeIcon icon={faRocket} /></p>
+            <p>Fixed Cost</p>
+            <p>Website Performance Optimization</p>
+            <p>Unlock the true potential of your website by</p>
+            <p>enhancing its performance to new heights! With my</p>
+            <p>your website loads faster, performs smoother, and</p>
+            <p>delivers an exceptional user experience.</p>
+          </div>
+          <div className="card-designs">
+            <p className="icon-size"><FontAwesomeIcon icon={faCode} /></p>
+            <p>Monthly Retainer</p>
+            <p>Website Maintenance</p>
+            <p>With my meticulous care and attention to detail, I'll</p>
+            <p>ensure that your website stays in top shape,</p>
+            <p>delivering a flawless experience to your visitors. From</p>
+            <p>regular updates to security enhancements, I've got</p>
+            <p>you covered!</p>
+          </div>
+        </div>
+      </CenteredContainer>
+      <CenteredContainer className="hire-me-container">
+        <NavbarBorder className="padding-around">
+          <a className="nav-item nav-link bold-large-text" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">HIRE ME</a>
+        </NavbarBorder>
+      </CenteredContainer>
+      <CenteredContainer className="container-size">
+        <NavbarWrapper>
+          <Navbar className="navbar navbar-expand-lg navbar-light padding-top">
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="mr-auto">
+                <a className="nav-item nav-link active large-text" href="#" style={{ fontSize: '300%' }}><FontAwesomeIcon icon={faSkull} /></a>
+              </div>
+              <div>
+                <a className="nav-item nav-link active bold-large-text" href="#" style={{ fontSize: '200%', paddingLeft: '5%', width: '150%' }}>アルバート</a>
+              </div>
+            </div>
+            <div className="padding-right">
+              <a className="nav-item nav-link bold-large-text" href="#">SHOWCASE</a>
+            </div>
+            <div className="padding-right">
+              <a className="nav-item nav-link bold-large-text" href="#">SERVICES</a>
+            </div>
+            <div className=" padding-right">
+              <a className="nav-item nav-link" href="#"><DarkModeToggle /></a>
+            </div>
+            <NavbarBorder className="padding-around">
+              <a className="nav-item nav-link bold-large-text" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">HIRE ME</a>
+            </NavbarBorder>
+          </Navbar>
+        </NavbarWrapper>
       </CenteredContainer>
     </ThemeProviderWrapper >
   );
