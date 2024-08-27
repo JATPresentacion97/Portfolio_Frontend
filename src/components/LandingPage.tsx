@@ -190,31 +190,18 @@ const LandingPage: React.FC = () => {
           <a className="nav-item nav-link bold-large-text" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">HIRE ME</a>
         </NavbarBorder>
       </CenteredContainer>
-      <CenteredContainer className="container-size">
-        <NavbarWrapper>
-          <Navbar className="navbar navbar-expand-lg navbar-light padding-top">
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div className="mr-auto">
-                <a className="nav-item nav-link active large-text" href="#" style={{ fontSize: '300%' }}><FontAwesomeIcon icon={faSkull} /></a>
-              </div>
-              <div>
-                <a className="nav-item nav-link active bold-large-text" href="#" style={{ fontSize: '200%', paddingLeft: '5%', width: '150%' }}>アルバート</a>
-              </div>
-            </div>
-            <div className="padding-right">
-              <a className="nav-item nav-link bold-large-text" href="#">SHOWCASE</a>
-            </div>
-            <div className="padding-right">
-              <a className="nav-item nav-link bold-large-text" href="#">SERVICES</a>
-            </div>
-            <div className=" padding-right">
-              <a className="nav-item nav-link" href="#"><DarkModeToggle /></a>
-            </div>
-            <NavbarBorder className="padding-around">
-              <a className="nav-item nav-link bold-large-text" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">HIRE ME</a>
-            </NavbarBorder>
-          </Navbar>
-        </NavbarWrapper>
+      <CenteredContainer className="card-container-size">
+        <div className="footer-design-container">
+          <div className="footer-designs">
+            <a className="nav-item nav-link active" href="#" style={{ fontSize: '180%', fontWeight: 'bold' }}><FontAwesomeIcon icon={faSkull} />&nbsp;アルバート</a>
+          </div>
+          <div className="footer-signature-designs">
+            <p> © 2024 John Albert T Presentacion | jatp</p>
+          </div>
+          <div className="footer-icons-designs" style={{ fontSize: '180%', fontWeight: 'bold' }}>
+            <p><FontAwesomeIcon icon={faLinkedin} />&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} />&nbsp;&nbsp;<FontAwesomeIcon icon={faInstagram} /></p>
+          </div>
+        </div>
       </CenteredContainer>
     </ThemeProviderWrapper >
   );
