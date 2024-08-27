@@ -117,7 +117,9 @@ const LandingPage: React.FC = () => {
         </div>
 
       </CenteredContainer>
+
       <CenteredContainer>
+
         <div className="padding-top">
           <ReactSwipe
             className="carousel"
@@ -128,6 +130,16 @@ const LandingPage: React.FC = () => {
             <div>PANE 2</div>
             <div>PANE 3</div>
           </ReactSwipe>
+
+        </div>
+
+      </CenteredContainer>
+      <CenteredContainer className="container-size">
+        <div className="main-introduction-container-size">
+
+          <FootingBorder>
+
+          </FootingBorder>
 
         </div>
       </CenteredContainer>
@@ -157,8 +169,10 @@ const LandingPage: React.FC = () => {
         <div className="card-design-container">
           <div className="card-designs">
             <p className="icon-size"><FontAwesomeIcon icon={faMeteor} /></p>
-            <p>Fixed Cost</p>
-            <p>Web Application Design & Development</p>
+            <br></br>
+            <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
+            <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Web Application Design & Development</p>
+            <br></br>
             <p>I am an expert in creating stunning and functional</p>
             <p>web applications that bring your ideas to life. I will</p>
             <p>design and develop a customized solution tailored to</p>
@@ -166,8 +180,10 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="card-designs">
             <p className="icon-size"><FontAwesomeIcon icon={faRocket} /></p>
-            <p>Fixed Cost</p>
-            <p>Website Performance Optimization</p>
+            <br></br>
+            <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
+            <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Performance Optimization</p>
+            <br></br>
             <p>Unlock the true potential of your website by</p>
             <p>enhancing its performance to new heights! With my</p>
             <p>your website loads faster, performs smoother, and</p>
@@ -175,10 +191,13 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="card-designs">
             <p className="icon-size"><FontAwesomeIcon icon={faCode} /></p>
-            <p>Monthly Retainer</p>
-            <p>Website Maintenance</p>
-            <p>With my meticulous care and attention to detail, I'll</p>
-            <p>ensure that your website stays in top shape,</p>
+            <br></br>
+            <p style={{ fontSize: '125%', color: 'grey' }}>Monthly Retainer</p>
+            <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Maintenance</p>
+            <br></br>
+            <br></br>
+            <p>With my meticulous care and attention to detail</p>
+            <p> , I'll ensure that your website stays in top shape,</p>
             <p>delivering a flawless experience to your visitors. From</p>
             <p>regular updates to security enhancements, I've got</p>
             <p>you covered!</p>
