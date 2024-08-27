@@ -41,11 +41,6 @@
   width: 50%;
 }
 
-.hire-me-container{
-   width: 50%;
-   margin-top: 3%;
-   margin-bottom: 9%;
-}
 
 .main-introduction-container-size{
   width: 70%;
@@ -58,6 +53,8 @@
   column-gap: 20px;
   justify-content: space-between;
 }
+
+
 
 .footer-design-container{
   width: 70%;
@@ -117,6 +114,34 @@
   height: 100%;
 }
 
+.showcase-design-container{
+  width: 70%;
+  padding-top: 3%;
+   display: flex;
+  justify-content: space-between;
+}
+
+.showcase-designs{
+  box-sizing: border-box;
+  width: 90%;
+   font-size: 225%;
+    font-weight: bold;
+}
+
+.left-scroll-designs{
+  border: 4px solid black;
+  box-sizing: border-box;
+    width: 5%;
+  margin-right: .5%;
+}
+
+.right-scroll-designs{
+  border: 4px solid black;
+  box-sizing: border-box;
+    width: 5%;
+}
+
+
 .footer-designs{
    float: left;
   box-sizing: border-box;
@@ -148,4 +173,24 @@
 
 .icon-size{
   font-size: 300%;
+}
+
+
+.hire-me-style{
+  font-size: 100%;
+  padding: 1%;
+  border: 4px solid black;
+}
+
+
+.hire-me-container{
+   width: 100%;
+   margin-top: 3%;
+   margin-bottom: 9%;
+}
+
+.footingborder{
+  border: 4px solid black;
+  padding: 0;
+  margin:0;
 }

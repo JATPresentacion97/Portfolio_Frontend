@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import { ThemeProviderWrapper } from './DarkModeToggle';
 import ReactSwipe from 'react-swipe';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { bottom } from '@popperjs/core';
 
 const CenteredContainer = styled.div`
   display: flex;
@@ -35,7 +36,7 @@ const NavbarBorder = styled.div`
 
 const FootingBorder = styled.div`
   border-bottom: 4px solid ${(props) => props.theme.color};
-  padding: 0.5rem;
+  padding-top: 0.5rem;
 `;
 
 
@@ -84,40 +85,40 @@ const LandingPage: React.FC = () => {
       </CenteredContainer>
       <CenteredContainer className="container-size">
         <div className="main-introduction-container-size">
+          <br></br>
           <div className="secondary-introduction-font-size">
             <p>Unlock Your Potential: I'll solve your website woes,</p>
             <p>while you stay focused on your goals.</p>
           </div>
+          <br></br>
+          <br></br>
           <div className="secondary-introduction-font-size">
             <p><FontAwesomeIcon icon={faLinkedin} />&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} />&nbsp;&nbsp;<FontAwesomeIcon icon={faInstagram} /></p>
           </div>
-          <FootingBorder>
-            <p>This portfolio was built with&nbsp;&nbsp;<FontAwesomeIcon icon={faReact} />&nbsp;&nbsp;<FontAwesomeIcon icon={faCoffee} />&nbsp;&nbsp;<FontAwesomeIcon icon={faLeaf} /></p>
-          </FootingBorder>
+          <br></br>
+          <p style={{ textAlign: 'left' }}>This portfolio was built with&nbsp;&nbsp;<FontAwesomeIcon icon={faReact} />&nbsp;&nbsp;<FontAwesomeIcon icon={faCoffee} />&nbsp;&nbsp;<FontAwesomeIcon icon={faLeaf} /></p>
+          <FootingBorder></FootingBorder>
+          <br></br>
           <div className="secondary-introduction-font-size padding-top">
             <p>Currently, I work for <mark>Accenture</mark>  as a <mark>Senior Backend Software Engineer.</mark></p>
             <p>but I can describe myself as more as a <mark>Full Stack Developer.</mark></p>
           </div>
         </div>
       </CenteredContainer>
+
       <CenteredContainer className="container-size">
-        <div className="main-introduction-container-size">
-          <div className="showcase-font-size padding-top">
+        <div className="showcase-design-container ">
+          <div className="showcase-designs ">
             <div className="align-left">Project Showcase.</div>
-            <div className="align-right button-container">
-              <div className="align-left button-style margin-right">
-                <a onClick={() => reactSwipeEl.current?.prev()} rel="noopener noreferrer">{'<'}</a>
-              </div>
-              <div className="align-right button-style">
-                <a onClick={() => reactSwipeEl.current?.next()} rel="noopener noreferrer">{'>'}</a>
-              </div>
-            </div>
           </div>
-
+          <div className="left-scroll-designs  button-style bold-large-text">
+            <a style={{ fontSize: '180%', fontWeight: 'bold' }} onClick={() => reactSwipeEl.current?.prev()} rel="noopener noreferrer">{'<'}</a>
+          </div>
+          <div className="right-scroll-designs  button-style bold-large-text">
+            <a style={{ fontSize: '180%', fontWeight: 'bold' }} onClick={() => reactSwipeEl.current?.next()} rel="noopener noreferrer">{'>'}</a>
+          </div>
         </div>
-
       </CenteredContainer>
-
       <CenteredContainer>
 
         <div className="padding-top">
@@ -205,9 +206,9 @@ const LandingPage: React.FC = () => {
         </div>
       </CenteredContainer>
       <CenteredContainer className="hire-me-container">
-        <NavbarBorder className="padding-around">
-          <a className="nav-item nav-link bold-large-text" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">HIRE ME</a>
-        </NavbarBorder>
+        <div className="hire-me-style">
+          <a className="nav-item nav-link" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">Hire Me</a>
+        </div>
       </CenteredContainer>
       <CenteredContainer className="card-container-size">
         <div className="footer-design-container">
