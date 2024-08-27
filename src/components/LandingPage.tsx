@@ -60,16 +60,16 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
             <div className="padding-right">
-              <a className="nav-item nav-link bold-large-text" href="#">SHOWCASE</a>
+              <a className="nav-item nav-link bold-large-text" href="#">Showcase</a>
             </div>
             <div className="padding-right">
-              <a className="nav-item nav-link bold-large-text" href="#">SERVICES</a>
+              <a className="nav-item nav-link bold-large-text" href="#">Services</a>
             </div>
             <div className=" padding-right">
               <a className="nav-item nav-link" href="#"><DarkModeToggle /></a>
             </div>
             <NavbarBorder className="padding-around">
-              <a className="nav-item nav-link bold-large-text" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">HIRE ME</a>
+              <a className="nav-item nav-link bold-large-text" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">Hire Me</a>
             </NavbarBorder>
           </Navbar>
         </NavbarWrapper>
