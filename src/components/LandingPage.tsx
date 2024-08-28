@@ -49,31 +49,27 @@ const LandingPage: React.FC = () => {
   return (
     <ThemeProviderWrapper>
       <CenteredContainer className="container-size">
-        <NavbarWrapper>
-          <Navbar className="navbar navbar-expand-lg navbar-light padding-top">
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div className="mr-auto">
-                <a className="nav-item nav-link active large-text" href="#" style={{ fontSize: '300%' }}><FontAwesomeIcon icon={faSkull} /></a>
-              </div>
-              <div>
-                <a className="nav-item nav-link active bold-large-text" href="#" style={{ fontSize: '200%', paddingLeft: '5%', width: '150%' }}>アルバート</a>
-              </div>
-            </div>
-            <div className="padding-right">
-              <a className="nav-item nav-link bold-large-text" href="#">Showcase</a>
-            </div>
-            <div className="padding-right">
-              <a className="nav-item nav-link bold-large-text" href="#">Services</a>
-            </div>
-            <div className=" padding-right">
-              <a className="nav-item nav-link" href="#"><DarkModeToggle /></a>
-            </div>
-            <NavbarBorder className="padding-around">
+        <div className="navbar-design-container">
+          <div className="japanesename-design">
+            <a className="nav-item nav-link active" href="#" style={{ fontSize: '180%', fontWeight: 'bold' }}><FontAwesomeIcon style={{ fontSize: '150%' }} icon={faSkull} />&nbsp;&nbsp;アルバート</a>
+          </div>
+          <div className="navbar-designs  bold-large-text">
+            <a className="nav-item nav-link bold-large-text" href="#">Showcase</a>
+          </div>
+          <div className="navbar-designs bold-large-text">
+            <a className="nav-item nav-link bold-large-text" href="#">Services</a>
+          </div>
+          <div className="navbar-designs  bold-large-text">
+            <a className="nav-item nav-link" href="#"><DarkModeToggle /></a>
+          </div>
+          <div className="hire-me-navbar-designs bold-large-text">
+            <NavbarBorder>
               <a className="nav-item nav-link bold-large-text" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">Hire Me</a>
             </NavbarBorder>
-          </Navbar>
-        </NavbarWrapper>
+          </div>
+        </div>
       </CenteredContainer>
+      <br></br><br></br>
       <CenteredContainer className="container-size padding-top">
         <div className=" main-introduction-container-size">
           <div className="main-introduction-font-size">
@@ -156,59 +152,68 @@ const LandingPage: React.FC = () => {
       </CenteredContainer>
       <CenteredContainer className="container-size">
         <div className="box-design-container">
-          <div className="box-designs">Angular</div>
-          <div className="box-designs">React</div>
-          <div className="box-designs">Typescript</div>
-          <div className="box-designs">Springboot</div>
-          <div className="box-designs">Java</div>
-          <div className="box-designs">Microservices</div>
-          <div className="box-designs">C#</div>
-          <div className="box-designs">GraphQl</div>
+          <div className="box-designs"><NavbarBorder>Angular</NavbarBorder></div>
+          <div className="box-designs"><NavbarBorder>React</NavbarBorder></div>
+          <div className="box-designs"><NavbarBorder>Typescript</NavbarBorder></div>
+          <div className="box-designs"><NavbarBorder>Springboot</NavbarBorder></div>
+          <div className="box-designs"><NavbarBorder>Java</NavbarBorder></div>
+          <div className="box-designs"><NavbarBorder>Microservices</NavbarBorder></div>
+          <div className="box-designs"><NavbarBorder>C#</NavbarBorder></div>
+          <div className="box-designs"><NavbarBorder>GraphQl</NavbarBorder></div>
         </div>
       </CenteredContainer>
       <CenteredContainer className="card-container-size">
         <div className="card-design-container">
-          <div className="card-designs">
-            <p className="icon-size"><FontAwesomeIcon icon={faMeteor} /></p>
-            <br></br>
-            <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
-            <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Web Application Design & Development</p>
-            <br></br>
-            <p>I am an expert in creating stunning and functional</p>
-            <p>web applications that bring your ideas to life. I will</p>
-            <p>design and develop a customized solution tailored to</p>
-            <p>your unique needs!</p>
-          </div>
-          <div className="card-designs">
-            <p className="icon-size"><FontAwesomeIcon icon={faRocket} /></p>
-            <br></br>
-            <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
-            <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Performance Optimization</p>
-            <br></br>
-            <p>Unlock the true potential of your website by</p>
-            <p>enhancing its performance to new heights! With my</p>
-            <p>your website loads faster, performs smoother, and</p>
-            <p>delivers an exceptional user experience.</p>
-          </div>
-          <div className="card-designs">
-            <p className="icon-size"><FontAwesomeIcon icon={faCode} /></p>
-            <br></br>
-            <p style={{ fontSize: '125%', color: 'grey' }}>Monthly Retainer</p>
-            <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Maintenance</p>
-            <br></br>
-            <br></br>
-            <p>With my meticulous care and attention to detail</p>
-            <p> , I'll ensure that your website stays in top shape,</p>
-            <p>delivering a flawless experience to your visitors. From</p>
-            <p>regular updates to security enhancements, I've got</p>
-            <p>you covered!</p>
-          </div>
+          <NavbarBorder>
+            <div className="card-designs">
+              <p className="icon-size"><FontAwesomeIcon icon={faMeteor} /></p>
+              <br></br>
+              <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
+              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Web Application Design & Development</p>
+              <br></br>
+              <p>I am an expert in creating stunning and functional</p>
+              <p>web applications that bring your ideas to life. I will</p>
+              <p>design and develop a customized solution tailored to</p>
+              <p>your unique needs!</p>
+
+            </div>
+          </NavbarBorder>
+          <NavbarBorder>
+            <div className="card-designs">
+              <p className="icon-size"><FontAwesomeIcon icon={faRocket} /></p>
+              <br></br>
+              <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
+              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Performance Optimization</p>
+              <br></br>
+              <p>Unlock the true potential of your website by</p>
+              <p>enhancing its performance to new heights! With my</p>
+              <p>your website loads faster, performs smoother, and</p>
+              <p>delivers an exceptional user experience.</p>
+            </div>
+          </NavbarBorder>
+          <NavbarBorder>
+            <div className="card-designs">
+              <p className="icon-size"><FontAwesomeIcon icon={faCode} /></p>
+              <br></br>
+              <p style={{ fontSize: '125%', color: 'grey' }}>Monthly Retainer</p>
+              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Maintenance</p>
+              <br></br>
+              <br></br>
+              <p>With my meticulous care and attention to detail</p>
+              <p> , I'll ensure that your website stays in top shape,</p>
+              <p>delivering a flawless experience to your visitors. From</p>
+              <p>regular updates to security enhancements, I've got</p>
+              <p>you covered!</p>
+            </div>
+          </NavbarBorder>
         </div>
       </CenteredContainer>
       <CenteredContainer className="hire-me-container">
-        <div className="hire-me-style">
-          <a className="nav-item nav-link" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">Hire Me</a>
-        </div>
+        <NavbarBorder>
+          <div className="hire-me-style">
+            <a className="nav-item nav-link" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">Hire Me</a>
+          </div>
+        </NavbarBorder>
       </CenteredContainer>
       <CenteredContainer className="card-container-size">
         <div className="footer-design-container">
