@@ -12,11 +12,20 @@ import styled from 'styled-components';
 import { ThemeProviderWrapper } from './DarkModeToggle';
 import ReactSwipe from 'react-swipe';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { bottom } from '@popperjs/core';
+import SlickReact from './SlickReact';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+
 
 const CenteredContainer = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
+`;
+
+const CenteredContainerWOFlex = styled.div`
   width: 100%;
 `;
 
@@ -39,8 +48,13 @@ const FootingBorder = styled.div`
   padding-top: 0.5rem;
 `;
 
-
-
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1
+};
 
 const LandingPage: React.FC = () => {
 
@@ -115,22 +129,31 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </CenteredContainer>
-      <CenteredContainer>
-
-        <div className="padding-top">
-          <ReactSwipe
-            className="carousel"
-            swipeOptions={{ continuous: false }}
-            ref={reactSwipeEl}
-          >
-            <div>PANE 1</div>
-            <div>PANE 2</div>
-            <div>PANE 3</div>
-          </ReactSwipe>
-
+      <CenteredContainerWOFlex>
+        {/* scroll */}
+        <div className="slider-container">
+          <Slider {...settings}>
+            <div>
+              <h3>1</h3>
+            </div>
+            <div>
+              <h3>2</h3>
+            </div>
+            <div>
+              <h3>3</h3>
+            </div>
+            <div>
+              <h3>4</h3>
+            </div>
+            <div>
+              <h3>5</h3>
+            </div>
+            <div>
+              <h3>6</h3>
+            </div>
+          </Slider>
         </div>
-
-      </CenteredContainer>
+      </CenteredContainerWOFlex>
       <CenteredContainer className="container-size">
         <div className="main-introduction-container-size">
 
