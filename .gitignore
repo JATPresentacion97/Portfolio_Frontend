@@ -18,3 +18,19 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react
+build/asset-manifest.json
+build/favicon.ico
+build/index.html
+build/logo192.png
+build/logo512.png
+build/manifest.json
+build/robots.txt
+build/static/css/main.102dd1b6.css
+build/static/css/main.102dd1b6.css.map
+build/static/js/main.5701a077.js
+build/static/js/main.5701a077.js.LICENSE.txt
+build/static/js/main.5701a077.js.map
+build/static/media/slick.2630a3e3eab21c607e21.svg
+build/static/media/slick.295183786cd8a1389865.woff
+build/static/media/slick.a4e97f5a2a64f0ab1323.eot
+build/static/media/slick.c94f7671dcc99dce43e2.ttf

@@ -16,7 +16,12 @@ import SlickReact from './SlickReact';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import corenet from '../assets/CoreNet.jpeg';
+import encova from '../assets/Encova.jpeg';
+import entrego from '../assets/Entrego.jpeg';
+import gcrypto from '../assets/Gcrypto.jpeg';
+import manulife from '../assets/Manulife.jpeg';
+import metrobank from '../assets/MetroBank.jpeg';
 
 
 const CenteredContainer = styled.div`
@@ -52,13 +57,27 @@ const settings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 4,
+  slidesToShow: 3,
   slidesToScroll: 1
 };
 
 const LandingPage: React.FC = () => {
 
-  const reactSwipeEl = useRef<ReactSwipe | null>(null);
+  const sliderRef = useRef<Slider>(null);
+
+  const showcaseRef = useRef<HTMLDivElement>(null);
+
+  const serviceRef = useRef<HTMLDivElement>(null);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
 
   return (
     <ThemeProviderWrapper>
@@ -68,10 +87,22 @@ const LandingPage: React.FC = () => {
             <a className="nav-item nav-link active" href="#" style={{ fontSize: '180%', fontWeight: 'bold' }}><FontAwesomeIcon style={{ fontSize: '150%' }} icon={faSkull} />&nbsp;&nbsp;アルバート</a>
           </div>
           <div className="navbar-designs  bold-large-text">
-            <a className="nav-item nav-link bold-large-text" href="#">Showcase</a>
+            <a
+              className="nav-item nav-link bold-large-text"
+              style={{ cursor: 'pointer' }}
+              onClick={() => showcaseRef.current?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Showcase
+            </a>
           </div>
           <div className="navbar-designs bold-large-text">
-            <a className="nav-item nav-link bold-large-text" href="#">Services</a>
+            <a
+              className="nav-item nav-link bold-large-text"
+              style={{ cursor: 'pointer' }}
+              onClick={() => serviceRef.current?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Service
+            </a>
           </div>
           <div className="navbar-designs  bold-large-text">
             <a className="nav-item nav-link" href="#"><DarkModeToggle /></a>
@@ -103,58 +134,85 @@ const LandingPage: React.FC = () => {
           <br></br>
           <br></br>
           <div className="secondary-introduction-font-size">
-            <p><FontAwesomeIcon icon={faLinkedin} />&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} />&nbsp;&nbsp;<FontAwesomeIcon icon={faInstagram} /></p>
+            <p>
+              <a href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+              &nbsp;&nbsp;
+              <a href="https://github.com/JATPresentacion97" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+              &nbsp;&nbsp;
+              <a href="https://www.instagram.com/j.albs/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </p>
           </div>
           <br></br>
           <p style={{ textAlign: 'left' }}>This portfolio was built with&nbsp;&nbsp;<FontAwesomeIcon icon={faReact} />&nbsp;&nbsp;<FontAwesomeIcon icon={faCoffee} />&nbsp;&nbsp;<FontAwesomeIcon icon={faLeaf} /></p>
           <FootingBorder></FootingBorder>
           <br></br>
           <div className="secondary-introduction-font-size padding-top">
-            <p>Currently, I work for <mark>Accenture</mark>  as a <mark>Senior Backend Software Engineer.</mark></p>
+            <p>Currently, I work for <mark>PWC AC Manila</mark>  as a <mark>Senior Associate Software Engineer.</mark></p>
             <p>but I can describe myself as more as a <mark>Full Stack Developer.</mark></p>
           </div>
         </div>
       </CenteredContainer>
 
-      <CenteredContainer className="container-size">
-        <div className="showcase-design-container ">
-          <div className="showcase-designs ">
+      <CenteredContainer className="container-size" ref={showcaseRef}>
+        <div className="showcase-design-container">
+          <div className="showcase-designs">
             <div className="align-left">Project Showcase.</div>
           </div>
-          <div className="left-scroll-designs  button-style bold-large-text">
-            <a style={{ fontSize: '180%', fontWeight: 'bold' }} onClick={() => reactSwipeEl.current?.prev()} rel="noopener noreferrer">{'<'}</a>
+          <div className="left-scroll-designs button-style bold-large-text">
+            <a
+              style={{ fontSize: '180%', fontWeight: 'bold', cursor: 'pointer' }}
+              onClick={() => sliderRef.current?.slickPrev()}
+              rel="noopener noreferrer"
+            >
+              {'<'}
+            </a>
           </div>
-          <div className="right-scroll-designs  button-style bold-large-text">
-            <a style={{ fontSize: '180%', fontWeight: 'bold' }} onClick={() => reactSwipeEl.current?.next()} rel="noopener noreferrer">{'>'}</a>
+          <div className="right-scroll-designs button-style bold-large-text">
+            <a
+              style={{ fontSize: '180%', fontWeight: 'bold', cursor: 'pointer' }}
+              onClick={() => sliderRef.current?.slickNext()}
+              rel="noopener noreferrer"
+            >
+              {'>'}
+            </a>
           </div>
         </div>
       </CenteredContainer>
-      <CenteredContainerWOFlex>
-        {/* scroll */}
-        <div className="slider-container">
-          <Slider {...settings}>
-            <div>
-              <h3>1</h3>
+
+      {/* Slider */}
+      <CenteredContainer>
+        <CenteredContainerWOFlex>
+          <div style={{ width: '70%', margin: '0 auto' }}>
+            <div className="slider-container slider-padding">
+              <Slider ref={sliderRef} {...settings}>
+                {[
+                  { src: corenet, alt: 'corenet', url: 'https://www.corenet.gov.sg/general/e-info.aspx' },
+                  { src: encova, alt: 'encova', url: 'https://www.encova.com/' },
+                  { src: entrego, alt: 'entrego', url: 'https://trackmypackage.net/c/entrego-tracking' },
+                  { src: gcrypto, alt: 'gcrypto', url: 'https://new.gcash.com/' },
+                  { src: manulife, alt: 'manulife', url: 'https://www.manulife.com.ph/' },
+                  { src: metrobank, alt: 'metrobank', url: 'https://www.metrobank.com.ph/services/mb-app' },
+                ].map(({ src, alt, url }, index) => (
+                  <div key={index}>
+                    <h3>
+                      <a href={url} target="_blank" rel="noopener noreferrer">
+                        <img src={src} alt={alt} style={{ width: '100%', cursor: 'pointer' }} />
+                      </a>
+                    </h3>
+                  </div>
+                ))}
+              </Slider>
             </div>
-            <div>
-              <h3>2</h3>
-            </div>
-            <div>
-              <h3>3</h3>
-            </div>
-            <div>
-              <h3>4</h3>
-            </div>
-            <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
-          </Slider>
-        </div>
-      </CenteredContainerWOFlex>
-      <CenteredContainer className="container-size">
+          </div>
+        </CenteredContainerWOFlex>
+      </CenteredContainer>
+      <CenteredContainer className="container-size container-padding-top ">
         <div className="main-introduction-container-size">
 
           <FootingBorder>
@@ -163,7 +221,7 @@ const LandingPage: React.FC = () => {
 
         </div>
       </CenteredContainer>
-      <CenteredContainer className="container-size">
+      <CenteredContainer className="container-size" ref={serviceRef}>
         <div className="main-introduction-container-size">
           <div className="showcase-font-size secondary-introduction-font-size padding-top">
             <p>Services I offer.</p>
@@ -247,7 +305,19 @@ const LandingPage: React.FC = () => {
             <p> © 2024 John Albert T Presentacion | jatp</p>
           </div>
           <div className="footer-icons-designs" style={{ fontSize: '180%', fontWeight: 'bold' }}>
-            <p><FontAwesomeIcon icon={faLinkedin} />&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} />&nbsp;&nbsp;<FontAwesomeIcon icon={faInstagram} /></p>
+            <p>
+              <a href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+              &nbsp;&nbsp;
+              <a href="https://github.com/JATPresentacion97" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+              &nbsp;&nbsp;
+              <a href="https://www.instagram.com/j.albs/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </p>
           </div>
         </div>
       </CenteredContainer>
