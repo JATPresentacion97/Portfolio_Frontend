@@ -1,47 +1,41 @@
-# Created by https://www.toptal.com/developers/gitignore/api/react
-# Edit at https://www.toptal.com/developers/gitignore?templates=react
-
-### react ###
-.DS_*
-*.log
+# Logs
 logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+
+# Dependencies
+/node_modules
+
+# Build output
+/build
+
+# Coverage reports
+/coverage
+
+# IDEs and editors
+*.sublime*
+.vscode/
+.idea/
+
+# Optional: Mac system files
+.DS_*
+
+# Optional: Other design/artifact formats
+*.psd
+*.sketch
+*.thumb
+
+# Backup files
 **/*.backup.*
 **/*.back.*
 
-node_modules
-bower_components
+# TypeScript
+*.tsbuildinfo
 
-*.sublime*
-
-psd
-thumb
-sketch
-
-# End of https://www.toptal.com/developers/gitignore/api/react
-build/asset-manifest.json
-build/favicon.ico
-build/index.html
-build/logo192.png
-build/logo512.png
-build/manifest.json
-build/robots.txt
-build/static/css/main.102dd1b6.css
-build/static/css/main.102dd1b6.css.map
-build/static/js/main.5701a077.js
-build/static/js/main.5701a077.js.LICENSE.txt
-build/static/js/main.5701a077.js.map
-build/static/media/slick.2630a3e3eab21c607e21.svg
-build/static/media/slick.295183786cd8a1389865.woff
-build/static/media/slick.a4e97f5a2a64f0ab1323.eot
-build/static/media/slick.c94f7671dcc99dce43e2.ttf
-build/static/css/main.0ecd8e4d.css
-build/static/css/main.0ecd8e4d.css.map
-build/static/js/main.037608d5.js
-build/static/js/main.037608d5.js.LICENSE.txt
-build/static/js/main.037608d5.js.map
-build/static/media/CoreNet.a193316fb87f4742fa21.jpeg
-build/static/media/Encova.92ba2d30eddf48e1387e.jpeg
-build/static/media/Entrego.6f3be224f6898ad2ee20.jpeg
-build/static/media/Gcrypto.08e75c697a1685ca690b.jpeg
-build/static/media/Manulife.24e76519363046111f85.jpeg
-build/static/media/MetroBank.5060a65d77406780ac1c.jpeg
+# Env files (if you have environment configs)
+.env*
