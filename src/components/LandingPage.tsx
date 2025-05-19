@@ -149,7 +149,37 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
           <br></br>
-          <p style={{ textAlign: 'left' }}>This portfolio was built with&nbsp;&nbsp;<FontAwesomeIcon icon={faReact} />&nbsp;&nbsp;<FontAwesomeIcon icon={faCoffee} />&nbsp;&nbsp;<FontAwesomeIcon icon={faLeaf} /></p>
+          <p style={{ textAlign: 'left' }}>
+            This portfolio was built with&nbsp;&nbsp;
+            <a
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'inherit' }}
+            >
+              <FontAwesomeIcon icon={faReact} />
+            </a>
+            &nbsp;&nbsp;
+
+            <a
+              href="https://www.javascript.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'inherit' }}
+            >
+              <FontAwesomeIcon icon={faCoffee} />
+            </a>
+            &nbsp;&nbsp;
+
+            <a
+              href="https://nodejs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'inherit' }}
+            >
+              <FontAwesomeIcon icon={faLeaf} />
+            </a>
+          </p>
           <FootingBorder></FootingBorder>
           <br></br>
           <div className="secondary-introduction-font-size padding-top">
@@ -233,14 +263,53 @@ const LandingPage: React.FC = () => {
       </CenteredContainer>
       <CenteredContainer className="container-size">
         <div className="box-design-container">
-          <div className="box-designs"><NavbarBorder>Angular</NavbarBorder></div>
-          <div className="box-designs"><NavbarBorder>React</NavbarBorder></div>
-          <div className="box-designs"><NavbarBorder>Typescript</NavbarBorder></div>
-          <div className="box-designs"><NavbarBorder>Springboot</NavbarBorder></div>
-          <div className="box-designs"><NavbarBorder>Java</NavbarBorder></div>
-          <div className="box-designs"><NavbarBorder>Microservices</NavbarBorder></div>
-          <div className="box-designs"><NavbarBorder>C#</NavbarBorder></div>
-          <div className="box-designs"><NavbarBorder>GraphQl</NavbarBorder></div>
+          <div className="box-designs">
+            <a href="https://angular.io/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <NavbarBorder>Angular</NavbarBorder>
+            </a>
+          </div>
+
+          <div className="box-designs">
+            <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <NavbarBorder>React</NavbarBorder>
+            </a>
+          </div>
+
+          <div className="box-designs">
+            <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <NavbarBorder>Typescript</NavbarBorder>
+            </a>
+          </div>
+
+          <div className="box-designs">
+            <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <NavbarBorder>Springboot</NavbarBorder>
+            </a>
+          </div>
+
+          <div className="box-designs">
+            <a href="https://www.oracle.com/java/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <NavbarBorder>Java</NavbarBorder>
+            </a>
+          </div>
+
+          <div className="box-designs">
+            <a href="https://microservices.io/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <NavbarBorder>Microservices</NavbarBorder>
+            </a>
+          </div>
+
+          <div className="box-designs">
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <NavbarBorder>C#</NavbarBorder>
+            </a>
+          </div>
+
+          <div className="box-designs">
+            <a href="https://graphql.org/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <NavbarBorder>GraphQl</NavbarBorder>
+            </a>
+          </div>
         </div>
       </CenteredContainer>
       <CenteredContainer className="card-container-size">
@@ -310,7 +379,7 @@ const LandingPage: React.FC = () => {
             <a className="nav-item nav-link active" href="#" style={{ fontSize: '180%', fontWeight: 'bold' }}><FontAwesomeIcon icon={faSkull} />&nbsp;アルバート</a>
           </div>
           <div className="footer-signature-designs">
-            <p> © 2024 John Albert T Presentacion | jatp</p>
+            <p> © 2024 John Albert T Presentacion | +639667689427(Globe)</p>
           </div>
           <div className="footer-icons-designs" style={{ fontSize: '180%', fontWeight: 'bold' }}>
             <p>
