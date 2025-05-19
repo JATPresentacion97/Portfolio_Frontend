@@ -2,12 +2,6 @@
 
 A modern and responsive **resume portfolio website** built with **React**, showcasing professional experience, skills, and projects. Designed with dark mode support, smooth visuals, and a clean layout to make your personal brand stand out.
 
-## 🚀 Live Demo
-
-> _(Add your deployed site link here, e.g. Netlify, Vercel, GitHub Pages)_
-
-[🔗 View Portfolio](https://your-portfolio-link.com)
-
 ---
 
 ## ✨ Features
@@ -43,16 +37,7 @@ src/
 │ └── MainPage.css # Custom styling
 ├── App.tsx
 ├── index.tsx
-└── ...
-
-
----
-
-## 📸 Screenshots
-
-> _(Optional: add screenshots or screen recordings to showcase the UI)_
-
----
+└── 
 
 ## 🧑 About Me
 
@@ -64,8 +49,6 @@ This project serves as my **personal developer portfolio**, designed to provide 
 - Contact & social links
 
 Feel free to use it as inspiration or fork it to create your own.
-
----
 
 ## ⚙️ Setup Instructions
 
