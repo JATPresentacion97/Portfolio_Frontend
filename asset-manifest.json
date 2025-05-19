@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio_Frontend/static/css/main.0ecd8e4d.css",
-    "main.js": "/Portfolio_Frontend/static/js/main.037608d5.js",
+    "main.js": "/Portfolio_Frontend/static/js/main.5bdd0f1b.js",
     "static/media/MetroBank.jpeg": "/Portfolio_Frontend/static/media/MetroBank.5060a65d77406780ac1c.jpeg",
     "static/media/Manulife.jpeg": "/Portfolio_Frontend/static/media/Manulife.24e76519363046111f85.jpeg",
     "static/media/Gcrypto.jpeg": "/Portfolio_Frontend/static/media/Gcrypto.08e75c697a1685ca690b.jpeg",
@@ -14,10 +14,10 @@
     "static/media/slick.woff": "/Portfolio_Frontend/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Portfolio_Frontend/index.html",
     "main.0ecd8e4d.css.map": "/Portfolio_Frontend/static/css/main.0ecd8e4d.css.map",
-    "main.037608d5.js.map": "/Portfolio_Frontend/static/js/main.037608d5.js.map"
+    "main.5bdd0f1b.js.map": "/Portfolio_Frontend/static/js/main.5bdd0f1b.js.map"
   },
   "entrypoints": [
     "static/css/main.0ecd8e4d.css",
-    "static/js/main.037608d5.js"
+    "static/js/main.5bdd0f1b.js"
   ]
 }
