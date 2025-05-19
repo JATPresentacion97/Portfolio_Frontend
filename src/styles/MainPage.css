@@ -8,7 +8,7 @@
 }
 
 .bold-large-text {
-  font-size: 1.5rem; /* Adjust the size as needed */
+  font-size: 1.5rem; 
   font-weight: bold;
 }
 
@@ -34,7 +34,7 @@
 
 .center-text {
   text-align: center;
-  margin: 0 auto; /* Center block-level elements horizontally */
+  margin: 0 auto; 
 }
 
 .container-size{
@@ -57,8 +57,6 @@ margin-top: 50px;
   column-gap: 20px;
   justify-content: space-between;
 }
-
-
 
 .footer-design-container{
   width: 70%;
@@ -94,7 +92,6 @@ margin-top: 50px;
     font-size: 100%;
     font-weight: bold;
     text-align: center;
-    border: 5px solid black;
 }
 
 .align-left{
@@ -130,18 +127,15 @@ margin-top: 50px;
 }
 
 .left-scroll-designs{
-  border: 4px solid black;
   box-sizing: border-box;
     width: 5%;
   margin-right: .5%;
 }
 
 .right-scroll-designs{
-  border: 4px solid black;
   box-sizing: border-box;
     width: 5%;
 }
-
 
 .footer-designs{
    float: left;
@@ -176,7 +170,6 @@ margin-top: 50px;
   font-size: 300%;
 }
 
-
 .hire-me-style{
   font-size: 100%;
   padding: 1%;
@@ -196,7 +189,6 @@ margin-top: 50px;
   margin:0;
 }
 
-
 .navbar-design-container{
   width: 70%;
   display: flex;
@@ -204,7 +196,6 @@ margin-top: 50px;
   padding-top: 2%;
   height: 100%;
 }
-
 
 .japanesename-design{
   box-sizing: border-box;
