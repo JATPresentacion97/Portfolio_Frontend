@@ -9,8 +9,6 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-// Import images for project showcase
 import corenet from '../assets/CoreNet.jpeg';
 import encova from '../assets/Encova.jpeg';
 import entrego from '../assets/Entrego.jpeg';
@@ -18,66 +16,63 @@ import gcrypto from '../assets/Gcrypto.jpeg';
 import manulife from '../assets/Manulife.jpeg';
 import metrobank from '../assets/MetroBank.jpeg';
 
-// Styled container that centers its children horizontally using flexbox
 const CenteredContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
 `;
 
-// Container without flex styling, just full width
+// Container with full width but no flexbox centering applied
 const CenteredContainerWOFlex = styled.div`
   width: 100%;
 `;
 
-// Styled div with border color based on current theme for navbar elements
+// Navbar wrapper with a solid border and padding, using theme color
 const NavbarBorder = styled.div`
   border: 4px solid ${(props) => props.theme.color};
   padding: 0.5rem;
 `;
 
-// Styled div with bottom border for footer separation, theme color aware
+// Footer wrapper with a bottom border and some padding on top, using theme color
 const FootingBorder = styled.div`
   border-bottom: 4px solid ${(props) => props.theme.color};
   padding-top: 0.5rem;
 `;
 
-// Styled div with border for project showcase navigation arrows, theme color aware
+// Showcase section wrapper with a solid border, themed color
 const ShowcaseBorder = styled.div`
   border: 4px solid ${(props) => props.theme.color};
 `;
 
-// React Slick slider settings for project showcase
+// Settings for the react-slick carousel slider component
 const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3, // Show 3 slides at once
-  slidesToScroll: 1,
-  arrows: false, // We provide custom arrows outside the slider
+  dots: false,          // Hide navigation dots
+  infinite: true,       // Enable infinite scrolling
+  speed: 500,           // Transition speed in milliseconds
+  slidesToShow: 3,      // Number of slides visible at once
+  slidesToScroll: 1,    // Number of slides to scroll on each action
+  arrows: false,        // Hide left/right arrows
 };
 
 const LandingPage: React.FC = () => {
-  // Refs to control slider and scroll to sections smoothly
+  // Ref to control slider component programmatically if needed
   const sliderRef = useRef<Slider>(null);
+  // Ref for the showcase div, possibly for scrolling or DOM manipulation
   const showcaseRef = useRef<HTMLDivElement>(null);
+  // Ref for the services section div
   const serviceRef = useRef<HTMLDivElement>(null);
 
   return (
-    // Wrap everything inside ThemeProviderWrapper to enable dark mode toggle and theming
     <ThemeProviderWrapper>
-      {/* Navbar Section */}
+      {/* Navbar */}
       <CenteredContainer className="container-size">
         <div className="navbar-design-container">
-          {/* Japanese name logo with icon */}
           <div className="japanesename-design">
             <a className="nav-item nav-link active" href="#" style={{ fontSize: '180%', fontWeight: 'bold' }}>
               <FontAwesomeIcon style={{ fontSize: '150%' }} icon={faSkull} />
               &nbsp;&nbsp;アルバート
             </a>
           </div>
-
-          {/* Navigation links scroll to sections smoothly */}
           <div className="navbar-designs  bold-large-text">
             <a
               className="nav-item nav-link bold-large-text"
@@ -96,15 +91,11 @@ const LandingPage: React.FC = () => {
               Service
             </a>
           </div>
-
-          {/* Dark mode toggle button */}
           <div className="navbar-designs  bold-large-text">
             <a className="nav-item nav-link" href="#">
               <DarkModeToggle />
             </a>
           </div>
-
-          {/* Hire Me button with themed border */}
           <div className="hire-me-navbar-designs bold-large-text">
             <NavbarBorder>
               <a
@@ -120,7 +111,7 @@ const LandingPage: React.FC = () => {
         </div>
       </CenteredContainer>
 
-      {/* Main Introduction Section */}
+      {/* Main Introduction */}
       <br />
       <br />
       <CenteredContainer className="container-size padding-top">
@@ -135,7 +126,7 @@ const LandingPage: React.FC = () => {
         </div>
       </CenteredContainer>
 
-      {/* Secondary Introduction with social links */}
+      {/* Secondary Introduction */}
       <CenteredContainer className="container-size">
         <div className="main-introduction-container-size">
           <br />
@@ -147,7 +138,6 @@ const LandingPage: React.FC = () => {
           <br />
           <div className="secondary-introduction-font-size">
             <p>
-              {/* Social icons linking to profiles */}
               <a href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
@@ -162,7 +152,6 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
           <br />
-          {/* Technologies used to build portfolio */}
           <p style={{ textAlign: 'left' }}>
             This portfolio was built with&nbsp;&nbsp;
             <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
@@ -188,14 +177,13 @@ const LandingPage: React.FC = () => {
         </div>
       </CenteredContainer>
 
-      {/* Project Showcase Section */}
+      {/* Showcase Section */}
       <CenteredContainer className="container-size" ref={showcaseRef}>
         <div className="showcase-design-container">
           <div className="showcase-designs">
             <div className="align-left">Project Showcase.</div>
           </div>
 
-          {/* Custom left scroll button */}
           <div className="left-scroll-designs button-style bold-large-text">
             <ShowcaseBorder>
               <a
@@ -207,8 +195,6 @@ const LandingPage: React.FC = () => {
               </a>
             </ShowcaseBorder>
           </div>
-
-          {/* Custom right scroll button */}
           <div className="right-scroll-designs button-style bold-large-text">
             <ShowcaseBorder>
               <a
@@ -238,9 +224,11 @@ const LandingPage: React.FC = () => {
                   { src: metrobank, alt: 'metrobank', url: 'https://www.metrobank.com.ph/services/mb-app' },
                 ].map(({ src, alt, url }, index) => (
                   <div key={index}>
-                    <a href={url} target="_blank" rel="noopener noreferrer">
-                      <img className="image-size" src={src} alt={alt} />
-                    </a>
+                    <h3>
+                      <a href={url} target="_blank" rel="noopener noreferrer">
+                        <img src={src} alt={alt} style={{ width: '100%', cursor: 'pointer' }} />
+                      </a>
+                    </h3>
                   </div>
                 ))}
               </Slider>
@@ -249,49 +237,138 @@ const LandingPage: React.FC = () => {
         </CenteredContainerWOFlex>
       </CenteredContainer>
 
-      {/* Services Section */}
+      {/* Service Section */}
+      <CenteredContainer className="container-size container-padding-top ">
+        <div className="main-introduction-container-size">
+          <FootingBorder></FootingBorder>
+        </div>
+      </CenteredContainer>
       <CenteredContainer className="container-size" ref={serviceRef}>
-        <div className="services-design-container">
-          <div className="services-designs">
-            <div className="align-left">Services.</div>
+        <div className="main-introduction-container-size">
+          <div className="showcase-font-size secondary-introduction-font-size padding-top">
+            <p>Services I offer.</p>
           </div>
-          <br />
-          <br />
-          <div className="services-card-container">
-            {/* Service Card Example */}
-            <div className="card-container">
-              <FontAwesomeIcon icon={faRocket} size="2x" />
-              <div className="card-text">
-                <h2>Web Development</h2>
-                <p>Build fast, responsive, and scalable web applications.</p>
-              </div>
-            </div>
-            <div className="card-container">
-              <FontAwesomeIcon icon={faMeteor} size="2x" />
-              <div className="card-text">
-                <h2>API Integration</h2>
-                <p>Integrate third-party APIs to enhance app functionalities.</p>
-              </div>
-            </div>
-            <div className="card-container">
-              <FontAwesomeIcon icon={faCode} size="2x" />
-              <div className="card-text">
-                <h2>Full Stack Development</h2>
-                <p>Expertise in frontend and backend technologies.</p>
-              </div>
-            </div>
+          <div className="secondary-introduction-font-size">
+            <p>
+              I usually work with the following technologies, though I'm framework agnostic and always open to learning
+              new things.
+            </p>
           </div>
         </div>
       </CenteredContainer>
-
-      {/* Footer Section */}
       <CenteredContainer className="container-size">
-        <br />
-        <FootingBorder>
-          <p style={{ textAlign: 'center' }}>
-            © 2024 John Albert Presentacion. All rights reserved.
-          </p>
-        </FootingBorder>
+        <div className="box-design-container">
+          {[
+            { name: 'Angular', url: 'https://angular.io/' },
+            { name: 'React', url: 'https://reactjs.org/' },
+            { name: 'Typescript', url: 'https://www.typescriptlang.org/' },
+            { name: 'Springboot', url: 'https://spring.io/projects/spring-boot' },
+            { name: 'Java', url: 'https://www.oracle.com/java/' },
+            { name: 'Microservices', url: 'https://microservices.io/' },
+            { name: 'C#', url: 'https://learn.microsoft.com/en-us/dotnet/csharp/' },
+            { name: 'GraphQl', url: 'https://graphql.org/' },
+          ].map(({ name, url }, i) => (
+            <div className="box-designs" key={i}>
+              <a href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <NavbarBorder>{name}</NavbarBorder>
+              </a>
+            </div>
+          ))}
+        </div>
+      </CenteredContainer>
+
+      {/* Cards Section */}
+      <CenteredContainer className="card-container-size">
+        <div className="card-design-container">
+          <NavbarBorder>
+            <div className="card-designs">
+              <p className="icon-size">
+                <FontAwesomeIcon icon={faMeteor} />
+              </p>
+              <br />
+              <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
+              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Web Application Design & Development</p>
+              <br />
+              <p>I am an expert in creating stunning and functional</p>
+              <p>web applications that bring your ideas to life. I will</p>
+              <p>design and develop a customized solution tailored to</p>
+              <p>your unique needs!</p>
+            </div>
+          </NavbarBorder>
+          <NavbarBorder>
+            <div className="card-designs">
+              <p className="icon-size">
+                <FontAwesomeIcon icon={faRocket} />
+              </p>
+              <br />
+              <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
+              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Performance Optimization</p>
+              <br />
+              <p>Unlock the true potential of your website by</p>
+              <p>enhancing its performance to new heights! With my</p>
+              <p>your website loads faster, performs smoother, and</p>
+              <p>delivers an exceptional user experience.</p>
+            </div>
+          </NavbarBorder>
+          <NavbarBorder>
+            <div className="card-designs">
+              <p className="icon-size">
+                <FontAwesomeIcon icon={faCode} />
+              </p>
+              <br />
+              <p style={{ fontSize: '125%', color: 'grey' }}>Monthly Retainer</p>
+              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Maintenance</p>
+              <br />
+              <br />
+              <p>With my meticulous care and attention to detail</p>
+              <p> , I'll ensure that your website stays in top shape,</p>
+              <p>delivering a flawless experience to your visitors. From</p>
+              <p>regular updates to security enhancements, I've got</p>
+              <p>you covered!</p>
+            </div>
+          </NavbarBorder>
+        </div>
+      </CenteredContainer>
+
+      {/* Download Resume */}
+      <CenteredContainer className="hire-me-container">
+        <NavbarBorder>
+          <div className="hire-me-style">
+            <a className="nav-item nav-link" href="Resume_JATPresentacion.pdf" download target="_blank" rel="noopener noreferrer">
+              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Download My Resume</p>
+            </a>
+          </div>
+        </NavbarBorder>
+      </CenteredContainer>
+
+      {/* Footer */}
+      <CenteredContainer className="card-container-size">
+        <div className="footer-design-container">
+          <div className="footer-designs">
+            <a className="nav-item nav-link active" href="#" style={{ fontSize: '180%', fontWeight: 'bold' }}>
+              <FontAwesomeIcon icon={faSkull} />
+              &nbsp;アルバート
+            </a>
+          </div>
+          <div className="footer-signature-designs">
+            <p> © 2024 John Albert T Presentacion | +639667689427(Globe)</p>
+          </div>
+          <div className="footer-icons-designs" style={{ fontSize: '180%', fontWeight: 'bold' }}>
+            <p>
+              <a href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+              &nbsp;&nbsp;
+              <a href="https://github.com/JATPresentacion97" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+              &nbsp;&nbsp;
+              <a href="https://www.instagram.com/j.albs/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </p>
+          </div>
+        </div>
       </CenteredContainer>
     </ThemeProviderWrapper>
   );
