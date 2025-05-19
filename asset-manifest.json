@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.css": "/Portfolio_Frontend/static/css/main.102dd1b6.css",
-    "main.js": "/Portfolio_Frontend/static/js/main.5701a077.js",
+    "main.css": "/Portfolio_Frontend/static/css/main.0ecd8e4d.css",
+    "main.js": "/Portfolio_Frontend/static/js/main.037608d5.js",
+    "static/media/MetroBank.jpeg": "/Portfolio_Frontend/static/media/MetroBank.5060a65d77406780ac1c.jpeg",
+    "static/media/Manulife.jpeg": "/Portfolio_Frontend/static/media/Manulife.24e76519363046111f85.jpeg",
+    "static/media/Gcrypto.jpeg": "/Portfolio_Frontend/static/media/Gcrypto.08e75c697a1685ca690b.jpeg",
+    "static/media/Encova.jpeg": "/Portfolio_Frontend/static/media/Encova.92ba2d30eddf48e1387e.jpeg",
+    "static/media/Entrego.jpeg": "/Portfolio_Frontend/static/media/Entrego.6f3be224f6898ad2ee20.jpeg",
+    "static/media/CoreNet.jpeg": "/Portfolio_Frontend/static/media/CoreNet.a193316fb87f4742fa21.jpeg",
     "static/media/slick.svg": "/Portfolio_Frontend/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Portfolio_Frontend/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/Portfolio_Frontend/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Portfolio_Frontend/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Portfolio_Frontend/index.html",
-    "main.102dd1b6.css.map": "/Portfolio_Frontend/static/css/main.102dd1b6.css.map",
-    "main.5701a077.js.map": "/Portfolio_Frontend/static/js/main.5701a077.js.map"
+    "main.0ecd8e4d.css.map": "/Portfolio_Frontend/static/css/main.0ecd8e4d.css.map",
+    "main.037608d5.js.map": "/Portfolio_Frontend/static/js/main.037608d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.102dd1b6.css",
-    "static/js/main.5701a077.js"
+    "static/css/main.0ecd8e4d.css",
+    "static/js/main.037608d5.js"
   ]
 }
