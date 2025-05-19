@@ -292,7 +292,15 @@ const LandingPage: React.FC = () => {
       <CenteredContainer className="hire-me-container">
         <NavbarBorder>
           <div className="hire-me-style">
-            <a className="nav-item nav-link" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">Hire Me</a>
+            <a
+              className="nav-item nav-link"
+              href="Resume_JATPresentacion.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Download My Resume</p>
+            </a>
           </div>
         </NavbarBorder>
       </CenteredContainer>
