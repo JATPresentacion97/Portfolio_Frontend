@@ -9,12 +9,21 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import corenet from '../assets/CoreNet.jpeg';
-import encova from '../assets/Encova.jpeg';
-import entrego from '../assets/Entrego.jpeg';
-import gcrypto from '../assets/Gcrypto.jpeg';
-import manulife from '../assets/Manulife.jpeg';
-import metrobank from '../assets/MetroBank.jpeg';
+import corenet from '../assets/ProfessionalShowcaseAssets/CoreNet.jpeg';
+import encova from '../assets/ProfessionalShowcaseAssets/Encova.jpeg';
+import entrego from '../assets/ProfessionalShowcaseAssets/Entrego.jpeg';
+import gcrypto from '../assets/ProfessionalShowcaseAssets/Gcrypto.jpeg';
+import manulife from '../assets/ProfessionalShowcaseAssets/Manulife.jpeg';
+import metrobank from '../assets/ProfessionalShowcaseAssets/MetroBank.jpeg';
+import AccountServiceAPI from '../assets/PersonalShowcaseAssets/AccountServiceAPI.jpeg';
+import BlogAPI from '../assets/PersonalShowcaseAssets/BlogAPI.jpeg';
+import EcommerceManagementAPI from '../assets/PersonalShowcaseAssets/EcommerceManagementAPI.jpeg';
+import PatientRecordManagementAPI from '../assets/PersonalShowcaseAssets/PatientRecordManagementAPI.jpeg';
+import PatientRecordManagementFrontend from '../assets/PersonalShowcaseAssets/PatientRecordManagementFrontend.jpeg';
+import PorfolioFrontend from '../assets/PersonalShowcaseAssets/PorfolioFrontend.jpeg';
+import TaskManagementAPI from '../assets/PersonalShowcaseAssets/TaskManagementAPI.jpeg';
+import WalletManagementAPI from '../assets/PersonalShowcaseAssets/WalletManagementAPI.jpeg';
+import WeatherAPI from '../assets/PersonalShowcaseAssets/WeatherAPI.jpeg';
 
 const CenteredContainer = styled.div`
   display: flex;
@@ -229,9 +238,11 @@ const LandingPage: React.FC = () => {
                 ].map(({ src, alt, url }, index) => (
                   <div key={index}>
                     <h3>
-                      <a href={url} target="_blank" rel="noopener noreferrer">
-                        <img src={src} alt={alt} style={{ width: '100%', cursor: 'pointer' }} />
-                      </a>
+                      <ShowcaseBorder>
+                        <a href={url} target="_blank" rel="noopener noreferrer">
+                          <img src={src} alt={alt} style={{ width: '100%', cursor: 'pointer' }} />
+                        </a>
+                      </ShowcaseBorder>
                     </h3>
                   </div>
                 ))}
@@ -248,81 +259,59 @@ const LandingPage: React.FC = () => {
             <div className="align-left">Personal Project Showcase.</div>
           </div>
 
+          <div className="left-scroll-designs button-style bold-large-text">
+            <ShowcaseBorder>
+              <a
+                style={{ fontSize: '180%', fontWeight: 'bold', cursor: 'pointer' }}
+                onClick={() => personalSliderRef.current?.slickPrev()}
+                rel="noopener noreferrer"
+              >
+                {'<'}
+              </a>
+            </ShowcaseBorder>
+          </div>
+          <div className="right-scroll-designs button-style bold-large-text">
+            <ShowcaseBorder>
+              <a
+                style={{ fontSize: '180%', fontWeight: 'bold', cursor: 'pointer' }}
+                onClick={() => personalSliderRef.current?.slickNext()}
+                rel="noopener noreferrer"
+              >
+                {'>'}
+              </a>
+            </ShowcaseBorder>
+          </div>
         </div>
       </CenteredContainer>
 
       {/* Personal Showcase Slider */}
       <CenteredContainer>
         <CenteredContainerWOFlex>
-          {/* Angular Section */}
           <div style={{ width: '70%', margin: '0 auto' }}>
-            <div className="showcase-font-size secondary-introduction-font-size padding-top">
-              <p>Angular</p>
-            </div>
-          </div>
-          <div style={{ width: '70%', margin: '0 auto' }}>
-            <div>
-              <a href="https://github.com/JATPresentacion97/FrontEnd" target="_blank" rel="noopener noreferrer">
-                Patient Record Management Frontend
-              </a>
-            </div>
-          </div>
-
-          {/* React + TypeScript Section */}
-          <div style={{ width: '70%', margin: '0 auto' }}>
-            <div className="showcase-font-size secondary-introduction-font-size padding-top">
-              <p>React + TypeScript</p>
-            </div>
-          </div>
-          <div style={{ width: '70%', margin: '0 auto' }}>
-            <div>
-              <a href="https://github.com/JATPresentacion97/Portfolio_Frontend" target="_blank" rel="noopener noreferrer">
-                Portfolio Front End
-              </a>
-            </div>
-          </div>
-
-          {/* Java Spring Boot Section */}
-          <div style={{ width: '70%', margin: '0 auto' }}>
-            <div className="showcase-font-size secondary-introduction-font-size padding-top">
-              <p>Java Spring Boot</p>
-            </div>
-          </div>
-          <div style={{ width: '70%', margin: '0 auto' }}>
-            <div>
-              <a href="https://github.com/JATPresentacion97/Weather_API" target="_blank" rel="noopener noreferrer">
-                Weather API
-              </a>
-            </div>
-            <div>
-              <a href="https://github.com/JATPresentacion97/Blog_API" target="_blank" rel="noopener noreferrer">
-                Blog API
-              </a>
-            </div>
-            <div>
-              <a href="https://github.com/JATPresentacion97/Task_Management_API" target="_blank" rel="noopener noreferrer">
-                Task Management API
-              </a>
-            </div>
-            <div>
-              <a href="https://github.com/JATPresentacion97/Ecommerce_API" target="_blank" rel="noopener noreferrer">
-                Ecommerce API
-              </a>
-            </div>
-            <div>
-              <a href="https://github.com/JATPresentacion97/Account_Service_API" target="_blank" rel="noopener noreferrer">
-                Account Service API
-              </a>
-            </div>
-            <div>
-              <a href="https://github.com/JATPresentacion97/Wallet_API" target="_blank" rel="noopener noreferrer">
-                Wallet Management API
-              </a>
-            </div>
-            <div>
-              <a href="https://github.com/JATPresentacion97/BackEnd" target="_blank" rel="noopener noreferrer">
-                Patient Record Management API
-              </a>
+            <div className="slider-container slider-padding">
+              <Slider ref={personalSliderRef} {...settings}>
+                {[
+                  { src: PatientRecordManagementFrontend, alt: 'Patient Record Management Frontend', url: 'https://github.com/JATPresentacion97/FrontEnd' },
+                  { src: PorfolioFrontend, alt: 'Portfolio Front End', url: 'https://github.com/JATPresentacion97/Portfolio_Frontend' },
+                  { src: WeatherAPI, alt: 'Weather API', url: 'https://github.com/JATPresentacion97/Weather_API' },
+                  { src: BlogAPI, alt: 'Blog API', url: 'https://github.com/JATPresentacion97/Blog_API' },
+                  { src: TaskManagementAPI, alt: 'Task Management API', url: 'https://github.com/JATPresentacion97/Task_Management_API' },
+                  { src: EcommerceManagementAPI, alt: 'Ecommerce Management API', url: 'https://github.com/JATPresentacion97/Ecommerce_API' },
+                  { src: AccountServiceAPI, alt: 'Account Service API', url: 'https://github.com/JATPresentacion97/Account_Service_API' },
+                  { src: WalletManagementAPI, alt: 'Wallet Management API', url: 'https://github.com/JATPresentacion97/Wallet_API' },
+                  { src: PatientRecordManagementAPI, alt: 'Patient Record Management API', url: 'https://github.com/JATPresentacion97/BackEnd' },
+                ].map(({ src, alt, url }, index) => (
+                  <div key={index}>
+                    <h3>
+                      <ShowcaseBorder>
+                        <a href={url} target="_blank" rel="noopener noreferrer">
+                          <img src={src} alt={alt} style={{ width: '100%', cursor: 'pointer' }} />
+                        </a>
+                      </ShowcaseBorder>
+                    </h3>
+                  </div>
+                ))}
+              </Slider>
             </div>
           </div>
         </CenteredContainerWOFlex>
