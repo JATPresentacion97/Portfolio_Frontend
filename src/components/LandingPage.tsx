@@ -57,8 +57,12 @@ const settings = {
 const LandingPage: React.FC = () => {
   // Ref to control slider component programmatically if needed
   const sliderRef = useRef<Slider>(null);
+  // Ref to control slider component programmatically if needed
+  const personalSliderRef = useRef<Slider>(null);
   // Ref for the showcase div, possibly for scrolling or DOM manipulation
   const showcaseRef = useRef<HTMLDivElement>(null);
+  // Ref for the showcase div, possibly for scrolling or DOM manipulation
+  const personalShowcaseRef = useRef<HTMLDivElement>(null);
   // Ref for the services section div
   const serviceRef = useRef<HTMLDivElement>(null);
 
@@ -177,11 +181,11 @@ const LandingPage: React.FC = () => {
         </div>
       </CenteredContainer>
 
-      {/* Showcase Section */}
+      {/* Professional Showcase Section */}
       <CenteredContainer className="container-size" ref={showcaseRef}>
         <div className="showcase-design-container">
           <div className="showcase-designs">
-            <div className="align-left">Project Showcase.</div>
+            <div className="align-left">Professional Project Showcase.</div>
           </div>
 
           <div className="left-scroll-designs button-style bold-large-text">
@@ -209,7 +213,7 @@ const LandingPage: React.FC = () => {
         </div>
       </CenteredContainer>
 
-      {/* Showcase Slider */}
+      {/* Professional Showcase Slider */}
       <CenteredContainer>
         <CenteredContainerWOFlex>
           <div style={{ width: '70%', margin: '0 auto' }}>
@@ -232,6 +236,93 @@ const LandingPage: React.FC = () => {
                   </div>
                 ))}
               </Slider>
+            </div>
+          </div>
+        </CenteredContainerWOFlex>
+      </CenteredContainer>
+
+      {/* Personal Showcase Section */}
+      <CenteredContainer className="container-size" ref={personalShowcaseRef}>
+        <div className="showcase-design-container">
+          <div className="showcase-designs">
+            <div className="align-left">Personal Project Showcase.</div>
+          </div>
+
+        </div>
+      </CenteredContainer>
+
+      {/* Personal Showcase Slider */}
+      <CenteredContainer>
+        <CenteredContainerWOFlex>
+          {/* Angular Section */}
+          <div style={{ width: '70%', margin: '0 auto' }}>
+            <div className="showcase-font-size secondary-introduction-font-size padding-top">
+              <p>Angular</p>
+            </div>
+          </div>
+          <div style={{ width: '70%', margin: '0 auto' }}>
+            <div>
+              <a href="https://github.com/JATPresentacion97/FrontEnd" target="_blank" rel="noopener noreferrer">
+                Patient Record Management Frontend
+              </a>
+            </div>
+          </div>
+
+          {/* React + TypeScript Section */}
+          <div style={{ width: '70%', margin: '0 auto' }}>
+            <div className="showcase-font-size secondary-introduction-font-size padding-top">
+              <p>React + TypeScript</p>
+            </div>
+          </div>
+          <div style={{ width: '70%', margin: '0 auto' }}>
+            <div>
+              <a href="https://github.com/JATPresentacion97/Portfolio_Frontend" target="_blank" rel="noopener noreferrer">
+                Portfolio Front End
+              </a>
+            </div>
+          </div>
+
+          {/* Java Spring Boot Section */}
+          <div style={{ width: '70%', margin: '0 auto' }}>
+            <div className="showcase-font-size secondary-introduction-font-size padding-top">
+              <p>Java Spring Boot</p>
+            </div>
+          </div>
+          <div style={{ width: '70%', margin: '0 auto' }}>
+            <div>
+              <a href="https://github.com/JATPresentacion97/Weather_API" target="_blank" rel="noopener noreferrer">
+                Weather API
+              </a>
+            </div>
+            <div>
+              <a href="https://github.com/JATPresentacion97/Blog_API" target="_blank" rel="noopener noreferrer">
+                Blog API
+              </a>
+            </div>
+            <div>
+              <a href="https://github.com/JATPresentacion97/Task_Management_API" target="_blank" rel="noopener noreferrer">
+                Task Management API
+              </a>
+            </div>
+            <div>
+              <a href="https://github.com/JATPresentacion97/Ecommerce_API" target="_blank" rel="noopener noreferrer">
+                Ecommerce API
+              </a>
+            </div>
+            <div>
+              <a href="https://github.com/JATPresentacion97/Account_Service_API" target="_blank" rel="noopener noreferrer">
+                Account Service API
+              </a>
+            </div>
+            <div>
+              <a href="https://github.com/JATPresentacion97/Wallet_API" target="_blank" rel="noopener noreferrer">
+                Wallet Management API
+              </a>
+            </div>
+            <div>
+              <a href="https://github.com/JATPresentacion97/BackEnd" target="_blank" rel="noopener noreferrer">
+                Patient Record Management API
+              </a>
             </div>
           </div>
         </CenteredContainerWOFlex>
@@ -370,7 +461,7 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </CenteredContainer>
-    </ThemeProviderWrapper>
+    </ThemeProviderWrapper >
   );
 };
 
