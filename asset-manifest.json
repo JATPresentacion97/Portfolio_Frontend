@@ -1,7 +1,16 @@
 {
   "files": {
     "main.css": "/Portfolio_Frontend/static/css/main.81cdb691.css",
-    "main.js": "/Portfolio_Frontend/static/js/main.ad27b878.js",
+    "main.js": "/Portfolio_Frontend/static/js/main.74c718d3.js",
+    "static/media/AccountServiceAPI.jpeg": "/Portfolio_Frontend/static/media/AccountServiceAPI.8f2ca38a01a7f3ce2ba3.jpeg",
+    "static/media/WeatherAPI.jpeg": "/Portfolio_Frontend/static/media/WeatherAPI.4d1b1a411e402e26fea4.jpeg",
+    "static/media/PatientRecordManagementFrontend.jpeg": "/Portfolio_Frontend/static/media/PatientRecordManagementFrontend.219f3da3c62536437ced.jpeg",
+    "static/media/BlogAPI.jpeg": "/Portfolio_Frontend/static/media/BlogAPI.d20ba654398608b027fb.jpeg",
+    "static/media/PorfolioFrontend.jpeg": "/Portfolio_Frontend/static/media/PorfolioFrontend.45e0067a04884f969baf.jpeg",
+    "static/media/PatientRecordManagementAPI.jpeg": "/Portfolio_Frontend/static/media/PatientRecordManagementAPI.ccfbbc20cb5cd8596931.jpeg",
+    "static/media/WalletManagementAPI.jpeg": "/Portfolio_Frontend/static/media/WalletManagementAPI.ddaf6c082dcede2fec1c.jpeg",
+    "static/media/EcommerceManagementAPI.jpeg": "/Portfolio_Frontend/static/media/EcommerceManagementAPI.00c11b3b864b9fe4c297.jpeg",
+    "static/media/TaskManagementAPI.jpeg": "/Portfolio_Frontend/static/media/TaskManagementAPI.ea836a47851d07b28222.jpeg",
     "static/media/MetroBank.jpeg": "/Portfolio_Frontend/static/media/MetroBank.5060a65d77406780ac1c.jpeg",
     "static/media/Manulife.jpeg": "/Portfolio_Frontend/static/media/Manulife.24e76519363046111f85.jpeg",
     "static/media/Gcrypto.jpeg": "/Portfolio_Frontend/static/media/Gcrypto.08e75c697a1685ca690b.jpeg",
@@ -14,10 +23,10 @@
     "static/media/slick.woff": "/Portfolio_Frontend/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Portfolio_Frontend/index.html",
     "main.81cdb691.css.map": "/Portfolio_Frontend/static/css/main.81cdb691.css.map",
-    "main.ad27b878.js.map": "/Portfolio_Frontend/static/js/main.ad27b878.js.map"
+    "main.74c718d3.js.map": "/Portfolio_Frontend/static/js/main.74c718d3.js.map"
   },
   "entrypoints": [
     "static/css/main.81cdb691.css",
-    "static/js/main.ad27b878.js"
+    "static/js/main.74c718d3.js"
   ]
 }
