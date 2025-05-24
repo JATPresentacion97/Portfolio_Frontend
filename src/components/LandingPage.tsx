@@ -456,7 +456,7 @@ const LandingPage: React.FC = () => {
             </a>
           </div>
           <div className="footer-signature-designs">
-            <p> © 2024 John Albert T Presentacion | +639667689427(Globe)</p>
+            <p> © 2024 John Albert T Presentacion | +639667689427(Globe) | johnalbertpresentacion@gmail.com</p>
           </div>
           <div className="footer-icons-designs" style={{ fontSize: '180%', fontWeight: 'bold' }}>
             <p>
