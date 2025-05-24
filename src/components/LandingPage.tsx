@@ -418,7 +418,7 @@ const LandingPage: React.FC = () => {
           download: true
         }, {
           href: "https://www.hackerrank.com/profile/johnalbertprese1",
-          text: "Hacker Rank"
+          text: "HackerRank"
         }, {
           href: "https://github.com/JATPresentacion97",
           text: "Github"
