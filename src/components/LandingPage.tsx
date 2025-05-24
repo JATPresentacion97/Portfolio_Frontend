@@ -291,15 +291,15 @@ const LandingPage: React.FC = () => {
             <div className="slider-container slider-padding">
               <Slider ref={personalSliderRef} {...settings}>
                 {[
-                  { src: PatientRecordManagementFrontend, alt: 'Patient Record Management Frontend', url: 'https://github.com/JATPresentacion97/FrontEnd' },
+                  { src: PatientRecordManagementFrontend, alt: 'Patient Record Management Frontend', url: 'https://github.com/JATPresentacion97/PatientRecordManagementSystem-Frontend' },
                   { src: PorfolioFrontend, alt: 'Portfolio Front End', url: 'https://github.com/JATPresentacion97/Portfolio_Frontend' },
                   { src: WeatherAPI, alt: 'Weather API', url: 'https://github.com/JATPresentacion97/Weather_API' },
-                  { src: BlogAPI, alt: 'Blog API', url: 'https://github.com/JATPresentacion97/Blog_API' },
+                  { src: BlogAPI, alt: 'Blog API', url: 'https://github.com/JATPresentacion97/Blog_Management_API' },
                   { src: TaskManagementAPI, alt: 'Task Management API', url: 'https://github.com/JATPresentacion97/Task_Management_API' },
-                  { src: EcommerceManagementAPI, alt: 'Ecommerce Management API', url: 'https://github.com/JATPresentacion97/Ecommerce_API' },
+                  { src: EcommerceManagementAPI, alt: 'Ecommerce Management API', url: 'https://github.com/JATPresentacion97/Ecommerce_Management_API' },
                   { src: AccountServiceAPI, alt: 'Account Service API', url: 'https://github.com/JATPresentacion97/Account_Service_API' },
-                  { src: WalletManagementAPI, alt: 'Wallet Management API', url: 'https://github.com/JATPresentacion97/Wallet_API' },
-                  { src: PatientRecordManagementAPI, alt: 'Patient Record Management API', url: 'https://github.com/JATPresentacion97/BackEnd' },
+                  { src: WalletManagementAPI, alt: 'Wallet Management API', url: 'https://github.com/JATPresentacion97/Wallet_Management_API' },
+                  { src: PatientRecordManagementAPI, alt: 'Patient Record Management API', url: 'https://github.com/JATPresentacion97/PatientRecordManagementSystem-Backend' },
                 ].map(({ src, alt, url }, index) => (
                   <div key={index}>
                     <h3>
