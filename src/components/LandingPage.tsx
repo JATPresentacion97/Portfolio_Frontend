@@ -412,14 +412,39 @@ const LandingPage: React.FC = () => {
 
       {/* Download Resume */}
       <CenteredContainer className="hire-me-container">
-        <NavbarBorder>
-          <div className="hire-me-style">
-            <a className="nav-item nav-link" href="Resume_JATPresentacion.pdf" download target="_blank" rel="noopener noreferrer">
-              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Download My Resume</p>
-            </a>
-          </div>
-        </NavbarBorder>
+        {[{
+          href: "Resume_JATPresentacion.pdf",
+          text: "Resume Download",
+          download: true
+        }, {
+          href: "https://www.hackerrank.com/profile/johnalbertprese1",
+          text: "Hacker Rank"
+        }, {
+          href: "https://github.com/JATPresentacion97",
+          text: "Github"
+        }].map(({ href, text, download = false }, i) => (
+          <NavbarBorder key={i} style={{ marginRight: '1%', width: '280px' }}>
+            <div
+              className="hire-me-style"
+              style={{ textAlign: 'center', width: '100%' }}
+            >
+              <a
+                className="nav-item nav-link"
+                href={href}
+                {...(download ? { download: true } : {})}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'block', width: '100%' }}
+              >
+                <p style={{ fontSize: '150%', fontWeight: 'bold', margin: 0 }}>
+                  {text}
+                </p>
+              </a>
+            </div>
+          </NavbarBorder>
+        ))}
       </CenteredContainer>
+
 
       {/* Footer */}
       <CenteredContainer className="card-container-size">
