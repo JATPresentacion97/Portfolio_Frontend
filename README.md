@@ -64,9 +64,9 @@ Make sure you have the following installed:
 ## 📦 Deployment
 
 This project can be deployed easily on:
-- [GitHub Pages](https://pages.github.com) *(with proper setup)*
+- [GitHub Pages](https://pages.github.com)
 
 ## 🧑‍🎨 Author
 
-**Your Name** – [[@yourhandle](https://github.com/yourhandle)](https://github.com/JATPresentacion97)
+**Your Name** – [(https://github.com/yourhandle)](https://github.com/JATPresentacion97)
 
