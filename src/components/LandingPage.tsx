@@ -24,6 +24,7 @@ import PorfolioFrontend from '../assets/PersonalShowcaseAssets/PorfolioFrontend.
 import TaskManagementAPI from '../assets/PersonalShowcaseAssets/TaskManagementAPI.jpeg';
 import WalletManagementAPI from '../assets/PersonalShowcaseAssets/WalletManagementAPI.jpeg';
 import WeatherAPI from '../assets/PersonalShowcaseAssets/WeatherAPI.jpeg';
+import SmartParkingAPI from '../assets/PersonalShowcaseAssets/SmartParkingAPI.jpeg';
 
 const CenteredContainer = styled.div`
   display: flex;
@@ -300,6 +301,7 @@ const LandingPage: React.FC = () => {
                   { src: AccountServiceAPI, alt: 'Account Service API', url: 'https://github.com/JATPresentacion97/Account_Service_API' },
                   { src: WalletManagementAPI, alt: 'Wallet Management API', url: 'https://github.com/JATPresentacion97/Wallet_Management_API' },
                   { src: PatientRecordManagementAPI, alt: 'Patient Record Management API', url: 'https://github.com/JATPresentacion97/PatientRecordManagementSystem-Backend' },
+                  { src: SmartParkingAPI, alt: 'Smart Parking API', url: 'https://github.com/JATPresentacion97/SmartPark_API' },
                 ].map(({ src, alt, url }, index) => (
                   <div key={index}>
                     <h3>
