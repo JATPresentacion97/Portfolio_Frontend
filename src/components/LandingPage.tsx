@@ -134,7 +134,7 @@ const LandingPage: React.FC = () => {
             <p>
               Arigatosaimongtanan, I'm <mark>Albert(アルバート)!</mark>
             </p>
-            <p>A passionate <mark>Web Developer</mark> </p>
+            <p>A passionate <mark>Software Engineer</mark> </p>
             <p>from the <mark>Philippines!</mark></p>
           </div>
         </div>
