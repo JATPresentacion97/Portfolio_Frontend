@@ -28,7 +28,7 @@ Make sure you have the following installed:
 
 1. Clone the repo:
    ```bash
-   git clone [https://github.com/your-username/portfolio-website.git](https://github.com/JATPresentacion97?tab=repositories)
+   git clone https://github.com/JATPresentacion97?tab=repositories
    cd portfolio-website
    ```
    
