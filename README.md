@@ -68,5 +68,5 @@ This project can be deployed easily on:
 
 ## 🧑‍🎨 Author
 
-**Your Name** – [(https://github.com/yourhandle)](https://github.com/JATPresentacion97)
+**John Albert T. Presentacion** – [(https://github.com/yourhandle)](https://github.com/JATPresentacion97)
 
