@@ -14,15 +14,14 @@ Welcome to my personal portfolio website! This project is built using **React** 
 ## 🛠 Tech Stack
 
 - **Frontend**: React, TypeScript, HTML5, CSS3 (or TailwindCSS / Styled Components)
-- **Other Tools**: React Router
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
 Make sure you have the following installed:
-- Node.js (>= 14)
-- npm or yarn
+- Node.js
+- npm
 
 ### Installation
 
@@ -35,22 +34,17 @@ Make sure you have the following installed:
 2. Install dependencies:
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 3. Start the development server:
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
 4. Open in browser:
    ```bash
-   [ npm run dev
-   # or
-   yarn dev](http://localhost:8080)
+   npm run dev
+   (http://localhost:8080)
    ```
 
 ## 🧾 Scripts
@@ -68,5 +62,5 @@ This project can be deployed easily on:
 
 ## 🧑‍🎨 Author
 
-**John Albert T. Presentacion** – [(https://github.com/yourhandle)](https://github.com/JATPresentacion97)
+**John Albert T. Presentacion** – [(https://github.com/yourhandle)]https://github.com/JATPresentacion97
 
