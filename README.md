@@ -31,13 +31,13 @@ Make sure you have the following installed:
    git clone https://github.com/JATPresentacion97?tab=repositories
    cd portfolio-website
    ```
-   
+
 2. Install dependencies:
-  ```bash
-  npm install
-  # or
-  yarn install
-  ```
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
 3. Start the development server:
    ```bash
