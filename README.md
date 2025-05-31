@@ -33,24 +33,24 @@ Make sure you have the following installed:
    ```
    
 2. Install dependencies:
-   ```bash
+  ```bash
   npm install
   # or
   yarn install
-   ```
+  ```
 
 3. Start the development server:
    ```bash
-  npm run dev
-  # or
-  yarn dev
+   npm run dev
+   # or
+   yarn dev
    ```
 
 4. Open in browser:
- ```bash
- [ npm run dev
-  # or
-  yarn dev](http://localhost:8080)
+   ```bash
+   [ npm run dev
+   # or
+   yarn dev](http://localhost:8080)
    ```
 
 ## 🧾 Scripts
