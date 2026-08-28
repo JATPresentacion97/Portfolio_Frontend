@@ -5,10 +5,16 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 
 // Global styles that respond to the current theme
 const GlobalStyle = createGlobalStyle`
+  html {
+    color-scheme: ${(props) => props.theme.background === '#000000' ? 'dark' : 'light'};
+    --theme-background: ${(props) => props.theme.background};
+    --theme-color: ${(props) => props.theme.color};
+  }
+
   body {
     background-color: ${(props) => props.theme.background};
     color: ${(props) => props.theme.color};
-    transition: all 0.3s linear;  // Smooth transition on theme change
+    transition: background-color 0.3s linear, color 0.3s linear;
   }
 `;
 
@@ -20,6 +26,15 @@ const Button = styled.button`
   cursor: pointer;
   color: ${(props) => props.theme.color};
   font-size: 1.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 180ms ease, color 180ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background: ${(props) => props.theme.color};
+    color: ${(props) => props.theme.background};
+    outline: none;
+  }
 `;
 
 // Define the shape of the ThemeContext value
@@ -43,7 +58,7 @@ const DarkModeToggle: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
-    <Button onClick={toggleTheme} aria-label="Toggle Dark Mode">
+    <Button onClick={toggleTheme} aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}>
       {/* Show sun icon if dark mode is enabled, moon if light mode */}
       {isDarkMode ? <FaSun /> : <FaMoon />}
     </Button>

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/MainPage.css';
-import DarkModeToggle, { ThemeProviderWrapper } from './DarkModeToggle';
+import DarkModeToggle from './DarkModeToggle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSkull, faRocket, faMeteor, faCoffee, faLeaf, faCode } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faInstagram, faReact } from '@fortawesome/free-brands-svg-icons';
@@ -43,6 +43,25 @@ const NavbarBorder = styled.div`
   padding: 0.5rem;
 `;
 
+const ThemedAction = styled.div`
+  border: 4px solid ${(props) => props.theme.color};
+  background: transparent;
+  color: ${(props) => props.theme.color};
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+
+  &:hover,
+  &:focus-within {
+    background: ${(props) => props.theme.color};
+    color: ${(props) => props.theme.background};
+    transform: translateY(-2px);
+  }
+
+  a,
+  button {
+    color: inherit;
+  }
+`;
+
 // Footer wrapper with a bottom border and some padding on top, using theme color
 const FootingBorder = styled.div`
   border-bottom: 4px solid ${(props) => props.theme.color};
@@ -62,6 +81,16 @@ const settings = {
   slidesToShow: 3,      // Number of slides visible at once
   slidesToScroll: 1,    // Number of slides to scroll on each action
   arrows: false,        // Hide left/right arrows
+  responsive: [
+    {
+      breakpoint: 900,
+      settings: { slidesToShow: 2 },
+    },
+    {
+      breakpoint: 600,
+      settings: { slidesToShow: 1 },
+    },
+  ],
 };
 
 const LandingPage: React.FC = () => {
@@ -77,41 +106,39 @@ const LandingPage: React.FC = () => {
   const serviceRef = useRef<HTMLDivElement>(null);
 
   return (
-    <ThemeProviderWrapper>
+    <div id="top" className="portfolio-page">
       {/* Navbar */}
       <CenteredContainer className="container-size">
         <div className="navbar-design-container">
           <div className="japanesename-design">
-            <a className="nav-item nav-link active" href="#" style={{ fontSize: '180%', fontWeight: 'bold' }}>
+            <a className="nav-item nav-link active" href="#top" style={{ fontSize: '180%', fontWeight: 'bold' }}>
               <FontAwesomeIcon style={{ fontSize: '150%' }} icon={faSkull} />
               &nbsp;&nbsp;アルバート
             </a>
           </div>
           <div className="navbar-designs  bold-large-text">
-            <a
-              className="nav-item nav-link bold-large-text"
-              style={{ cursor: 'pointer' }}
+            <button
+              className="nav-item nav-link bold-large-text nav-scroll-button"
               onClick={() => showcaseRef.current?.scrollIntoView({ behavior: 'smooth' })}
             >
               Showcase
-            </a>
+            </button>
           </div>
           <div className="navbar-designs bold-large-text">
-            <a
-              className="nav-item nav-link bold-large-text"
-              style={{ cursor: 'pointer' }}
+            <button
+              className="nav-item nav-link bold-large-text nav-scroll-button"
               onClick={() => serviceRef.current?.scrollIntoView({ behavior: 'smooth' })}
             >
               Service
-            </a>
+            </button>
           </div>
           <div className="navbar-designs  bold-large-text">
-            <a className="nav-item nav-link" href="#">
+            <div className="nav-item nav-link">
               <DarkModeToggle />
-            </a>
+            </div>
           </div>
           <div className="hire-me-navbar-designs bold-large-text">
-            <NavbarBorder>
+            <ThemedAction className="nav-action">
               <a
                 className="nav-item nav-link bold-large-text"
                 href="https://www.linkedin.com/in/john-albert-presentacion-852092188/"
@@ -120,7 +147,7 @@ const LandingPage: React.FC = () => {
               >
                 Hire Me
               </a>
-            </NavbarBorder>
+            </ThemedAction>
           </div>
         </div>
       </CenteredContainer>
@@ -186,7 +213,7 @@ const LandingPage: React.FC = () => {
             <p>
               Currently, I work for <mark>PWC AC Manila</mark> as a <mark>Senior Associate Software Engineer.</mark>
             </p>
-            <p>but I can describe myself as more as a <mark>Full Stack Developer.</mark></p>
+            <p>I would describe myself more broadly as a <mark>Full Stack Developer.</mark></p>
           </div>
         </div>
       </CenteredContainer>
@@ -199,26 +226,26 @@ const LandingPage: React.FC = () => {
           </div>
 
           <div className="left-scroll-designs button-style bold-large-text">
-            <ShowcaseBorder>
-              <a
-                style={{ fontSize: '180%', fontWeight: 'bold', cursor: 'pointer' }}
+            <ThemedAction>
+              <button
+                className="carousel-button"
                 onClick={() => sliderRef.current?.slickPrev()}
-                rel="noopener noreferrer"
+                aria-label="Previous professional project"
               >
                 {'<'}
-              </a>
-            </ShowcaseBorder>
+              </button>
+            </ThemedAction>
           </div>
           <div className="right-scroll-designs button-style bold-large-text">
-            <ShowcaseBorder>
-              <a
-                style={{ fontSize: '180%', fontWeight: 'bold', cursor: 'pointer' }}
+            <ThemedAction>
+              <button
+                className="carousel-button"
                 onClick={() => sliderRef.current?.slickNext()}
-                rel="noopener noreferrer"
+                aria-label="Next professional project"
               >
                 {'>'}
-              </a>
-            </ShowcaseBorder>
+              </button>
+            </ThemedAction>
           </div>
         </div>
       </CenteredContainer>
@@ -226,7 +253,7 @@ const LandingPage: React.FC = () => {
       {/* Professional Showcase Slider */}
       <CenteredContainer>
         <CenteredContainerWOFlex>
-          <div style={{ width: '70%', margin: '0 auto' }}>
+          <div className="showcase-slider-width">
             <div className="slider-container slider-padding">
               <Slider ref={sliderRef} {...settings}>
                 {[
@@ -261,26 +288,26 @@ const LandingPage: React.FC = () => {
           </div>
 
           <div className="left-scroll-designs button-style bold-large-text">
-            <ShowcaseBorder>
-              <a
-                style={{ fontSize: '180%', fontWeight: 'bold', cursor: 'pointer' }}
+            <ThemedAction>
+              <button
+                className="carousel-button"
                 onClick={() => personalSliderRef.current?.slickPrev()}
-                rel="noopener noreferrer"
+                aria-label="Previous personal project"
               >
                 {'<'}
-              </a>
-            </ShowcaseBorder>
+              </button>
+            </ThemedAction>
           </div>
           <div className="right-scroll-designs button-style bold-large-text">
-            <ShowcaseBorder>
-              <a
-                style={{ fontSize: '180%', fontWeight: 'bold', cursor: 'pointer' }}
+            <ThemedAction>
+              <button
+                className="carousel-button"
                 onClick={() => personalSliderRef.current?.slickNext()}
-                rel="noopener noreferrer"
+                aria-label="Next personal project"
               >
                 {'>'}
-              </a>
-            </ShowcaseBorder>
+              </button>
+            </ThemedAction>
           </div>
         </div>
       </CenteredContainer>
@@ -288,7 +315,7 @@ const LandingPage: React.FC = () => {
       {/* Personal Showcase Slider */}
       <CenteredContainer>
         <CenteredContainerWOFlex>
-          <div style={{ width: '70%', margin: '0 auto' }}>
+          <div className="showcase-slider-width">
             <div className="slider-container slider-padding">
               <Slider ref={personalSliderRef} {...settings}>
                 {[
@@ -344,15 +371,15 @@ const LandingPage: React.FC = () => {
             { name: 'Angular', url: 'https://angular.io/' },
             { name: 'React', url: 'https://reactjs.org/' },
             { name: 'Typescript', url: 'https://www.typescriptlang.org/' },
-            { name: 'Springboot', url: 'https://spring.io/projects/spring-boot' },
+            { name: 'Spring Boot', url: 'https://spring.io/projects/spring-boot' },
             { name: 'Java', url: 'https://www.oracle.com/java/' },
             { name: 'Microservices', url: 'https://microservices.io/' },
             { name: 'C#', url: 'https://learn.microsoft.com/en-us/dotnet/csharp/' },
-            { name: 'GraphQl', url: 'https://graphql.org/' },
+            { name: 'GraphQL', url: 'https://graphql.org/' },
           ].map(({ name, url }, i) => (
             <div className="box-designs" key={i}>
               <a href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <NavbarBorder>{name}</NavbarBorder>
+                <ThemedAction className="technology-action">{name}</ThemedAction>
               </a>
             </div>
           ))}
@@ -387,8 +414,8 @@ const LandingPage: React.FC = () => {
               <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Performance Optimization</p>
               <br />
               <p>Unlock the true potential of your website by</p>
-              <p>enhancing its performance to new heights! With my</p>
-              <p>your website loads faster, performs smoother, and</p>
+              <p>enhancing its performance to new heights! I ensure</p>
+              <p>your website loads faster, runs smoother, and</p>
               <p>delivers an exceptional user experience.</p>
             </div>
           </NavbarBorder>
@@ -423,9 +450,9 @@ const LandingPage: React.FC = () => {
           text: "HackerRank"
         }, {
           href: "https://github.com/JATPresentacion97",
-          text: "Github"
+          text: "GitHub"
         }].map(({ href, text, download = false }, i) => (
-          <NavbarBorder key={i} style={{ marginRight: '1%', width: '280px' }}>
+          <ThemedAction key={i} className="resume-action">
             <div
               className="hire-me-style"
               style={{ textAlign: 'center', width: '100%' }}
@@ -443,7 +470,7 @@ const LandingPage: React.FC = () => {
                 </p>
               </a>
             </div>
-          </NavbarBorder>
+          </ThemedAction>
         ))}
       </CenteredContainer>
 
@@ -452,13 +479,13 @@ const LandingPage: React.FC = () => {
       <CenteredContainer className="card-container-size">
         <div className="footer-design-container">
           <div className="footer-designs">
-            <a className="nav-item nav-link active" href="#" style={{ fontSize: '180%', fontWeight: 'bold' }}>
+            <a className="nav-item nav-link active" href="#top" style={{ fontSize: '180%', fontWeight: 'bold' }}>
               <FontAwesomeIcon icon={faSkull} />
               &nbsp;アルバート
             </a>
           </div>
           <div className="footer-signature-designs">
-            <p> © 2024 John Albert T Presentacion | +639667689427(Globe) | johnalbertpresentacion@gmail.com</p>
+            <p> © {new Date().getFullYear()} John Albert T Presentacion | +639667689427 (Globe) | johnalbertpresentacion@gmail.com</p>
           </div>
           <div className="footer-icons-designs" style={{ fontSize: '180%', fontWeight: 'bold' }}>
             <p>
@@ -477,7 +504,7 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </CenteredContainer>
-    </ThemeProviderWrapper >
+    </div>
   );
 };
 
