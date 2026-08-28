@@ -27,11 +27,6 @@
   padding-bottom: .5%;
 }
 
-.main-introduction-font-size{
-  font-size: 400%;
-  font-weight: bolder;
-}
-
 .center-text {
   text-align: center;
   margin: 0 auto; 
@@ -221,8 +216,23 @@ margin-top: 50px;
 
 .main-introduction-font-size {
   font-size: clamp(2.25rem, 5vw, 4rem);
-  line-height: 1.12;
+  font-weight: bolder;
+  line-height: 1.22;
   overflow-wrap: anywhere;
+}
+
+.main-introduction-font-size p {
+  margin-bottom: 0.2em;
+}
+
+.main-introduction-font-size p:last-child {
+  margin-bottom: 0;
+}
+
+.main-introduction-font-size mark {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 0.12em;
 }
 
 .showcase-slider-width {
