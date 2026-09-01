@@ -1,14 +1,11 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/MainPage.css';
 import DarkModeToggle from './DarkModeToggle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSkull, faRocket, faMeteor, faCoffee, faLeaf, faCode } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub, faInstagram, faReact } from '@fortawesome/free-brands-svg-icons';
-import styled from 'styled-components';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { faArrowUpRightFromSquare, faCode, faGaugeHigh, faLayerGroup, faSkull } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 import corenet from '../assets/ProfessionalShowcaseAssets/CoreNet.jpeg';
 import encova from '../assets/ProfessionalShowcaseAssets/Encova.jpeg';
 import entrego from '../assets/ProfessionalShowcaseAssets/Entrego.jpeg';
@@ -20,492 +17,193 @@ import BlogAPI from '../assets/PersonalShowcaseAssets/BlogAPI.jpeg';
 import EcommerceManagementAPI from '../assets/PersonalShowcaseAssets/EcommerceManagementAPI.jpeg';
 import PatientRecordManagementAPI from '../assets/PersonalShowcaseAssets/PatientRecordManagementAPI.jpeg';
 import PatientRecordManagementFrontend from '../assets/PersonalShowcaseAssets/PatientRecordManagementFrontend.jpeg';
-import PorfolioFrontend from '../assets/PersonalShowcaseAssets/PorfolioFrontend.jpeg';
+import PortfolioFrontend from '../assets/PersonalShowcaseAssets/PorfolioFrontend.jpeg';
+import SmartParkingAPI from '../assets/PersonalShowcaseAssets/SmartParkingAPI.jpeg';
 import TaskManagementAPI from '../assets/PersonalShowcaseAssets/TaskManagementAPI.jpeg';
 import WalletManagementAPI from '../assets/PersonalShowcaseAssets/WalletManagementAPI.jpeg';
 import WeatherAPI from '../assets/PersonalShowcaseAssets/WeatherAPI.jpeg';
-import SmartParkingAPI from '../assets/PersonalShowcaseAssets/SmartParkingAPI.jpeg';
 
-const CenteredContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-`;
-
-// Container with full width but no flexbox centering applied
-const CenteredContainerWOFlex = styled.div`
-  width: 100%;
-`;
-
-// Navbar wrapper with a solid border and padding, using theme color
-const NavbarBorder = styled.div`
-  border: 4px solid ${(props) => props.theme.color};
-  padding: 0.5rem;
-`;
-
-const ThemedAction = styled.div`
-  border: 4px solid ${(props) => props.theme.color};
-  background: transparent;
-  color: ${(props) => props.theme.color};
-  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
-
-  &:hover,
-  &:focus-within {
-    background: ${(props) => props.theme.color};
-    color: ${(props) => props.theme.background};
-    transform: translateY(-2px);
-  }
-
-  a,
-  button {
-    color: inherit;
-  }
-`;
-
-// Footer wrapper with a bottom border and some padding on top, using theme color
-const FootingBorder = styled.div`
-  border-bottom: 4px solid ${(props) => props.theme.color};
-  padding-top: 0.5rem;
-`;
-
-// Showcase section wrapper with a solid border, themed color
-const ShowcaseBorder = styled.div`
-  border: 4px solid ${(props) => props.theme.color};
-`;
-
-// Settings for the react-slick carousel slider component
-const settings = {
-  dots: false,          // Hide navigation dots
-  infinite: true,       // Enable infinite scrolling
-  speed: 500,           // Transition speed in milliseconds
-  slidesToShow: 3,      // Number of slides visible at once
-  slidesToScroll: 1,    // Number of slides to scroll on each action
-  arrows: false,        // Hide left/right arrows
-  responsive: [
-    {
-      breakpoint: 900,
-      settings: { slidesToShow: 2 },
-    },
-    {
-      breakpoint: 600,
-      settings: { slidesToShow: 1 },
-    },
-  ],
+type Project = {
+  name: string;
+  image: string;
+  url: string;
+  category: string;
+  description: string;
 };
 
-const LandingPage: React.FC = () => {
-  // Ref to control slider component programmatically if needed
-  const sliderRef = useRef<Slider>(null);
-  // Ref to control slider component programmatically if needed
-  const personalSliderRef = useRef<Slider>(null);
-  // Ref for the showcase div, possibly for scrolling or DOM manipulation
-  const showcaseRef = useRef<HTMLDivElement>(null);
-  // Ref for the showcase div, possibly for scrolling or DOM manipulation
-  const personalShowcaseRef = useRef<HTMLDivElement>(null);
-  // Ref for the services section div
-  const serviceRef = useRef<HTMLDivElement>(null);
+const professionalProjects: Project[] = [
+  { name: 'CoreNet', image: corenet, url: 'https://www.corenet.gov.sg/general/e-info.aspx', category: 'Government platform', description: 'A professional delivery supporting digital services and complex public-sector workflows.' },
+  { name: 'Encova Insurance', image: encova, url: 'https://www.encova.com/', category: 'Insurance technology', description: 'Customer-facing insurance experiences built for clarity, resilience, and long-term maintainability.' },
+  { name: 'Entrego', image: entrego, url: 'https://trackmypackage.net/c/entrego-tracking', category: 'Logistics', description: 'Digital logistics work focused on reliable flows and a smooth customer experience.' },
+  { name: 'GCrypto', image: gcrypto, url: 'https://new.gcash.com/', category: 'Fintech', description: 'Product engineering for secure, high-traffic financial technology experiences.' },
+  { name: 'Manulife', image: manulife, url: 'https://www.manulife.com.ph/', category: 'Financial services', description: 'Scalable customer experiences for a multi-market financial services organization.' },
+  { name: 'Metrobank', image: metrobank, url: 'https://www.metrobank.com.ph/services/mb-app', category: 'Digital banking', description: 'Modern banking experiences with an emphasis on usability, performance, and trust.' },
+];
 
-  return (
-    <div id="top" className="portfolio-page">
-      {/* Navbar */}
-      <CenteredContainer className="container-size">
-        <div className="navbar-design-container">
-          <div className="japanesename-design">
-            <a className="nav-item nav-link active" href="#top" style={{ fontSize: '180%', fontWeight: 'bold' }}>
-              <FontAwesomeIcon style={{ fontSize: '150%' }} icon={faSkull} />
-              &nbsp;&nbsp;アルバート
-            </a>
-          </div>
-          <div className="navbar-designs  bold-large-text">
-            <button
-              className="nav-item nav-link bold-large-text nav-scroll-button"
-              onClick={() => showcaseRef.current?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Showcase
-            </button>
-          </div>
-          <div className="navbar-designs bold-large-text">
-            <button
-              className="nav-item nav-link bold-large-text nav-scroll-button"
-              onClick={() => serviceRef.current?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Service
-            </button>
-          </div>
-          <div className="navbar-designs  bold-large-text">
-            <div className="nav-item nav-link">
-              <DarkModeToggle />
-            </div>
-          </div>
-          <div className="hire-me-navbar-designs bold-large-text">
-            <ThemedAction className="nav-action">
-              <a
-                className="nav-item nav-link bold-large-text"
-                href="https://www.linkedin.com/in/john-albert-presentacion-852092188/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Hire Me
-              </a>
-            </ThemedAction>
-          </div>
-        </div>
-      </CenteredContainer>
+const personalProjects: Project[] = [
+  { name: 'Patient Records', image: PatientRecordManagementFrontend, url: 'https://github.com/JATPresentacion97/PatientRecordManagementSystem-Frontend', category: 'React application', description: 'A front-end for managing patient information and day-to-day clinical workflows.' },
+  { name: 'Portfolio Frontend', image: PortfolioFrontend, url: 'https://github.com/JATPresentacion97/Portfolio_Frontend', category: 'React · TypeScript', description: 'The source for this responsive portfolio and its evolving design system.' },
+  { name: 'Weather API', image: WeatherAPI, url: 'https://github.com/JATPresentacion97/Weather_API', category: 'Backend API', description: 'A focused service for retrieving and presenting useful weather data.' },
+  { name: 'Blog API', image: BlogAPI, url: 'https://github.com/JATPresentacion97/Blog_Management_API', category: 'Spring Boot API', description: 'Content management endpoints for posts, authors, and publishing workflows.' },
+  { name: 'Task Management API', image: TaskManagementAPI, url: 'https://github.com/JATPresentacion97/Task_Management_API', category: 'Backend API', description: 'Structured task, status, and assignment management for productive teams.' },
+  { name: 'Ecommerce API', image: EcommerceManagementAPI, url: 'https://github.com/JATPresentacion97/Ecommerce_Management_API', category: 'Commerce platform', description: 'A commerce service covering the foundations of products, orders, and customers.' },
+  { name: 'Account Service API', image: AccountServiceAPI, url: 'https://github.com/JATPresentacion97/Account_Service_API', category: 'Microservice', description: 'A dedicated account service designed around clear boundaries and secure access.' },
+  { name: 'Wallet API', image: WalletManagementAPI, url: 'https://github.com/JATPresentacion97/Wallet_Management_API', category: 'Fintech API', description: 'Wallet and transaction capabilities packaged as a maintainable backend service.' },
+  { name: 'Patient Records API', image: PatientRecordManagementAPI, url: 'https://github.com/JATPresentacion97/PatientRecordManagementSystem-Backend', category: 'Healthcare API', description: 'The backend supporting secure patient data and healthcare operations.' },
+  { name: 'Smart Parking API', image: SmartParkingAPI, url: 'https://github.com/JATPresentacion97/SmartPark_API', category: 'Smart systems', description: 'Parking availability and management capabilities built as a focused API.' },
+];
 
-      {/* Main Introduction */}
-      <br />
-      <br />
-      <CenteredContainer className="container-size padding-top">
-        <div className="main-introduction-container-size">
-          <div className="main-introduction-font-size">
-            <p>
-              Arigatosaimongtanan, I'm <mark>Albert(アルバート)!</mark>
-            </p>
-            <p>A passionate <mark>Software Engineer</mark> </p>
-            <p>from the <mark>Philippines!</mark></p>
-          </div>
-        </div>
-      </CenteredContainer>
+const services = [
+  { icon: faLayerGroup, eyebrow: 'Fixed cost', title: 'Application design & development', description: 'From the first system boundary to the final interface, I build complete web applications around your real business needs.' },
+  { icon: faGaugeHigh, eyebrow: 'Focused engagement', title: 'Performance & modernization', description: 'I untangle slow paths, improve maintainability, and modernize systems without losing the behavior your users depend on.' },
+  { icon: faCode, eyebrow: 'Monthly retainer', title: 'Ongoing engineering support', description: 'Reliable maintenance, code review, feature delivery, and technical guidance that keep your product moving forward.' },
+];
 
-      {/* Secondary Introduction */}
-      <CenteredContainer className="container-size">
-        <div className="main-introduction-container-size">
-          <br />
-          <div className="secondary-introduction-font-size">
-            <p>Unlock Your Potential: I'll solve your website woes,</p>
-            <p>while you stay focused on your goals.</p>
-          </div>
-          <br />
-          <br />
-          <div className="secondary-introduction-font-size">
-            <p>
-              <a href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              &nbsp;&nbsp;
-              <a href="https://github.com/JATPresentacion97" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-              &nbsp;&nbsp;
-              <a href="https://www.instagram.com/j.albs/" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-            </p>
-          </div>
-          <br />
-          <p style={{ textAlign: 'left' }}>
-            This portfolio was built with&nbsp;&nbsp;
-            <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-              <FontAwesomeIcon icon={faReact} />
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://www.javascript.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-              <FontAwesomeIcon icon={faCoffee} />
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-              <FontAwesomeIcon icon={faLeaf} />
-            </a>
-          </p>
-          <FootingBorder></FootingBorder>
-          <br />
-          <div className="secondary-introduction-font-size padding-top">
-            <p>
-              Currently, I work for <mark>PWC AC Manila</mark> as a <mark>Senior Associate Software Engineer.</mark>
-            </p>
-            <p>I would describe myself more broadly as a <mark>Full Stack Developer.</mark></p>
-          </div>
-        </div>
-      </CenteredContainer>
+const socialLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/john-albert-presentacion-852092188/', icon: faLinkedin },
+  { label: 'GitHub', href: 'https://github.com/JATPresentacion97', icon: faGithub },
+  { label: 'Instagram', href: 'https://www.instagram.com/j.albs/', icon: faInstagram },
+];
 
-      {/* Professional Showcase Section */}
-      <CenteredContainer className="container-size" ref={showcaseRef}>
-        <div className="showcase-design-container">
-          <div className="showcase-designs">
-            <div className="align-left">Professional Project Showcase.</div>
-          </div>
+const skills = ['Angular', 'React', 'TypeScript', 'Spring Boot', 'Java', 'Microservices', 'C#', 'GraphQL'];
 
-          <div className="left-scroll-designs button-style bold-large-text">
-            <ThemedAction>
-              <button
-                className="carousel-button"
-                onClick={() => sliderRef.current?.slickPrev()}
-                aria-label="Previous professional project"
-              >
-                {'<'}
-              </button>
-            </ThemedAction>
-          </div>
-          <div className="right-scroll-designs button-style bold-large-text">
-            <ThemedAction>
-              <button
-                className="carousel-button"
-                onClick={() => sliderRef.current?.slickNext()}
-                aria-label="Next professional project"
-              >
-                {'>'}
-              </button>
-            </ThemedAction>
-          </div>
-        </div>
-      </CenteredContainer>
+const SectionTitle: React.FC<{ number: string; first: string; second: string }> = ({ number, first, second }) => (
+  <div className="section-heading">
+    <span>{number}</span>
+    <h2>{first}<br /><em>{second}</em></h2>
+  </div>
+);
 
-      {/* Professional Showcase Slider */}
-      <CenteredContainer>
-        <CenteredContainerWOFlex>
-          <div className="showcase-slider-width">
-            <div className="slider-container slider-padding">
-              <Slider ref={sliderRef} {...settings}>
-                {[
-                  { src: corenet, alt: 'corenet', url: 'https://www.corenet.gov.sg/general/e-info.aspx' },
-                  { src: encova, alt: 'encova', url: 'https://www.encova.com/' },
-                  { src: entrego, alt: 'entrego', url: 'https://trackmypackage.net/c/entrego-tracking' },
-                  { src: gcrypto, alt: 'gcrypto', url: 'https://new.gcash.com/' },
-                  { src: manulife, alt: 'manulife', url: 'https://www.manulife.com.ph/' },
-                  { src: metrobank, alt: 'metrobank', url: 'https://www.metrobank.com.ph/services/mb-app' },
-                ].map(({ src, alt, url }, index) => (
-                  <div key={index}>
-                    <h3>
-                      <ShowcaseBorder>
-                        <a href={url} target="_blank" rel="noopener noreferrer">
-                          <img src={src} alt={alt} style={{ width: '100%', cursor: 'pointer' }} />
-                        </a>
-                      </ShowcaseBorder>
-                    </h3>
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          </div>
-        </CenteredContainerWOFlex>
-      </CenteredContainer>
+const ProjectCard: React.FC<{ project: Project; compact?: boolean }> = ({ project, compact = false }) => (
+  <article className={`project-card${compact ? ' project-card--compact' : ''}`}>
+    <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.name}`}>
+      <div className="project-image-wrap">
+        <img src={project.image} alt={`${project.name} project`} loading="lazy" />
+      </div>
+      <div className="project-copy">
+        <div><p className="mono-label">{project.category}</p><h3>{project.name}</h3></div>
+        <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
+      </div>
+      <p className="project-description">{project.description}</p>
+    </a>
+  </article>
+);
 
-      {/* Personal Showcase Section */}
-      <CenteredContainer className="container-size" ref={personalShowcaseRef}>
-        <div className="showcase-design-container">
-          <div className="showcase-designs">
-            <div className="align-left">Personal Project Showcase.</div>
-          </div>
+const LandingPage: React.FC = () => (
+  <div id="top" className="portfolio-page">
+    <nav className="floating-nav" aria-label="Primary navigation">
+      <a className="nav-mark" href="#top" aria-label="Back to top"><FontAwesomeIcon icon={faSkull} /></a>
+      <div className="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+      </div>
+      <DarkModeToggle />
+      <a className="nav-hire" href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">Hire me</a>
+    </nav>
 
-          <div className="left-scroll-designs button-style bold-large-text">
-            <ThemedAction>
-              <button
-                className="carousel-button"
-                onClick={() => personalSliderRef.current?.slickPrev()}
-                aria-label="Previous personal project"
-              >
-                {'<'}
-              </button>
-            </ThemedAction>
-          </div>
-          <div className="right-scroll-designs button-style bold-large-text">
-            <ThemedAction>
-              <button
-                className="carousel-button"
-                onClick={() => personalSliderRef.current?.slickNext()}
-                aria-label="Next personal project"
-              >
-                {'>'}
-              </button>
-            </ThemedAction>
-          </div>
-        </div>
-      </CenteredContainer>
-
-      {/* Personal Showcase Slider */}
-      <CenteredContainer>
-        <CenteredContainerWOFlex>
-          <div className="showcase-slider-width">
-            <div className="slider-container slider-padding">
-              <Slider ref={personalSliderRef} {...settings}>
-                {[
-                  { src: PatientRecordManagementFrontend, alt: 'Patient Record Management Frontend', url: 'https://github.com/JATPresentacion97/PatientRecordManagementSystem-Frontend' },
-                  { src: PorfolioFrontend, alt: 'Portfolio Front End', url: 'https://github.com/JATPresentacion97/Portfolio_Frontend' },
-                  { src: WeatherAPI, alt: 'Weather API', url: 'https://github.com/JATPresentacion97/Weather_API' },
-                  { src: BlogAPI, alt: 'Blog API', url: 'https://github.com/JATPresentacion97/Blog_Management_API' },
-                  { src: TaskManagementAPI, alt: 'Task Management API', url: 'https://github.com/JATPresentacion97/Task_Management_API' },
-                  { src: EcommerceManagementAPI, alt: 'Ecommerce Management API', url: 'https://github.com/JATPresentacion97/Ecommerce_Management_API' },
-                  { src: AccountServiceAPI, alt: 'Account Service API', url: 'https://github.com/JATPresentacion97/Account_Service_API' },
-                  { src: WalletManagementAPI, alt: 'Wallet Management API', url: 'https://github.com/JATPresentacion97/Wallet_Management_API' },
-                  { src: PatientRecordManagementAPI, alt: 'Patient Record Management API', url: 'https://github.com/JATPresentacion97/PatientRecordManagementSystem-Backend' },
-                  { src: SmartParkingAPI, alt: 'Smart Parking API', url: 'https://github.com/JATPresentacion97/SmartPark_API' },
-                ].map(({ src, alt, url }, index) => (
-                  <div key={index}>
-                    <h3>
-                      <ShowcaseBorder>
-                        <a href={url} target="_blank" rel="noopener noreferrer">
-                          <img src={src} alt={alt} style={{ width: '100%', cursor: 'pointer' }} />
-                        </a>
-                      </ShowcaseBorder>
-                    </h3>
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          </div>
-        </CenteredContainerWOFlex>
-      </CenteredContainer>
-
-      {/* Service Section */}
-      <CenteredContainer className="container-size container-padding-top ">
-        <div className="main-introduction-container-size">
-          <FootingBorder></FootingBorder>
-        </div>
-      </CenteredContainer>
-      <CenteredContainer className="container-size" ref={serviceRef}>
-        <div className="main-introduction-container-size">
-          <div className="showcase-font-size secondary-introduction-font-size padding-top">
-            <p>Services I offer.</p>
-          </div>
-          <div className="secondary-introduction-font-size">
-            <p>
-              I usually work with the following technologies, though I'm framework agnostic and always open to learning
-              new things.
-            </p>
-          </div>
-        </div>
-      </CenteredContainer>
-      <CenteredContainer className="container-size">
-        <div className="box-design-container">
-          {[
-            { name: 'Angular', url: 'https://angular.io/' },
-            { name: 'React', url: 'https://reactjs.org/' },
-            { name: 'Typescript', url: 'https://www.typescriptlang.org/' },
-            { name: 'Spring Boot', url: 'https://spring.io/projects/spring-boot' },
-            { name: 'Java', url: 'https://www.oracle.com/java/' },
-            { name: 'Microservices', url: 'https://microservices.io/' },
-            { name: 'C#', url: 'https://learn.microsoft.com/en-us/dotnet/csharp/' },
-            { name: 'GraphQL', url: 'https://graphql.org/' },
-          ].map(({ name, url }, i) => (
-            <div className="box-designs" key={i}>
-              <a href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <ThemedAction className="technology-action">{name}</ThemedAction>
-              </a>
-            </div>
-          ))}
-        </div>
-      </CenteredContainer>
-
-      {/* Cards Section */}
-      <CenteredContainer className="card-container-size">
-        <div className="card-design-container">
-          <NavbarBorder>
-            <div className="card-designs">
-              <p className="icon-size">
-                <FontAwesomeIcon icon={faMeteor} />
-              </p>
-              <br />
-              <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
-              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Web Application Design & Development</p>
-              <br />
-              <p>I am an expert in creating stunning and functional</p>
-              <p>web applications that bring your ideas to life. I will</p>
-              <p>design and develop a customized solution tailored to</p>
-              <p>your unique needs!</p>
-            </div>
-          </NavbarBorder>
-          <NavbarBorder>
-            <div className="card-designs">
-              <p className="icon-size">
-                <FontAwesomeIcon icon={faRocket} />
-              </p>
-              <br />
-              <p style={{ fontSize: '125%', color: 'grey' }}>Fixed Cost</p>
-              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Performance Optimization</p>
-              <br />
-              <p>Unlock the true potential of your website by</p>
-              <p>enhancing its performance to new heights! I ensure</p>
-              <p>your website loads faster, runs smoother, and</p>
-              <p>delivers an exceptional user experience.</p>
-            </div>
-          </NavbarBorder>
-          <NavbarBorder>
-            <div className="card-designs">
-              <p className="icon-size">
-                <FontAwesomeIcon icon={faCode} />
-              </p>
-              <br />
-              <p style={{ fontSize: '125%', color: 'grey' }}>Monthly Retainer</p>
-              <p style={{ fontSize: '150%', fontWeight: 'bold' }}>Website Maintenance</p>
-              <br />
-              <br />
-              <p>With my meticulous care and attention to detail</p>
-              <p> , I'll ensure that your website stays in top shape,</p>
-              <p>delivering a flawless experience to your visitors. From</p>
-              <p>regular updates to security enhancements, I've got</p>
-              <p>you covered!</p>
-            </div>
-          </NavbarBorder>
-        </div>
-      </CenteredContainer>
-
-      {/* Download Resume */}
-      <CenteredContainer className="hire-me-container">
-        {[{
-          href: "Resume_JATPresentacion.pdf",
-          text: "Resume Download",
-          download: true
-        }, {
-          href: "https://www.hackerrank.com/profile/johnalbertprese1",
-          text: "HackerRank"
-        }, {
-          href: "https://github.com/JATPresentacion97",
-          text: "GitHub"
-        }].map(({ href, text, download = false }, i) => (
-          <ThemedAction key={i} className="resume-action">
-            <div
-              className="hire-me-style"
-              style={{ textAlign: 'center', width: '100%' }}
-            >
-              <a
-                className="nav-item nav-link"
-                href={href}
-                {...(download ? { download: true } : {})}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'block', width: '100%' }}
-              >
-                <p style={{ fontSize: '150%', fontWeight: 'bold', margin: 0 }}>
-                  {text}
-                </p>
-              </a>
-            </div>
-          </ThemedAction>
-        ))}
-      </CenteredContainer>
-
-
-      {/* Footer */}
-      <CenteredContainer className="card-container-size">
-        <div className="footer-design-container">
-          <div className="footer-designs">
-            <a className="nav-item nav-link active" href="#top" style={{ fontSize: '180%', fontWeight: 'bold' }}>
+    <main className="site-shell">
+      <div className="portfolio-layout">
+        <aside className="identity-rail">
+          <div className="identity-card">
+            <div className="identity-art" aria-hidden="true">
+              <span className="identity-grid" />
               <FontAwesomeIcon icon={faSkull} />
-              &nbsp;アルバート
-            </a>
+              <span className="identity-initials">JATP</span>
+            </div>
+            <div className="identity-copy">
+              <p className="availability"><span /> Available for selected projects</p>
+              <h2>John Albert Presentacion</h2>
+              <p className="identity-handle">アルバート · JATP</p>
+              <p>A full-stack software engineer from the Philippines building useful, durable digital products.</p>
+              <div className="social-links">
+                {socialLinks.map(({ label, href, icon }) => (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}><FontAwesomeIcon icon={icon} /></a>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="footer-signature-designs">
-            <p> © {new Date().getFullYear()} John Albert T Presentacion | +639667689427 (Globe) | johnalbertpresentacion@gmail.com</p>
-          </div>
-          <div className="footer-icons-designs" style={{ fontSize: '180%', fontWeight: 'bold' }}>
-            <p>
-              <a href="https://www.linkedin.com/in/john-albert-presentacion-852092188/" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              &nbsp;&nbsp;
-              <a href="https://github.com/JATPresentacion97" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-              &nbsp;&nbsp;
-              <a href="https://www.instagram.com/j.albs/" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-            </p>
-          </div>
+        </aside>
+
+        <div className="content-column">
+          <header className="hero-section">
+            <p className="hero-kicker">Arigatosaimongtanan — I'm Albert (アルバート), from the Philippines</p>
+            <h1>Software<span>Engineer</span></h1>
+            <p className="hero-lead"><mark>I turn complex requirements into clear products.</mark> From thoughtful interfaces to dependable APIs.</p>
+            <p className="hero-current">Currently building at <a href="https://www.pwc.com/ph/en.html" target="_blank" rel="noopener noreferrer">PwC AC Manila</a></p>
+          </header>
+
+          <section className="stats-grid" aria-label="Portfolio statistics">
+            <div><strong>6</strong><span>Professional deliveries</span></div>
+            <div><strong>10</strong><span>Personal builds</span></div>
+            <div><strong>Full</strong><span>Stack perspective</span></div>
+          </section>
+
+          <section id="services" className="content-section">
+            <SectionTitle number="01" first="What" second="I do" />
+            <p className="section-intro">Frameworks are tools. I bring product thinking, sound architecture, and hands-on delivery across the stack.</p>
+            <div className="skills-marquee" aria-label="Core technologies">
+              <div>
+                {[...skills, ...skills].map((skill, index) => (
+                  <React.Fragment key={`${skill}-${index}`}><span>{skill}</span><b aria-hidden="true">◆</b></React.Fragment>
+                ))}
+              </div>
+            </div>
+            <div className="service-grid">
+              {services.map(({ icon, eyebrow, title, description }) => (
+                <article key={title} className="service-card">
+                  <FontAwesomeIcon icon={icon} />
+                  <div><p className="mono-label">{eyebrow}</p><h3>{title}</h3></div>
+                  <p>{description}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="work" className="content-section">
+            <SectionTitle number="02" first="Selected" second="work" />
+            <p className="section-intro">Professional products delivered across government, logistics, insurance, fintech, and digital banking.</p>
+            <div className="project-grid">{professionalProjects.map((project) => <ProjectCard key={project.name} project={project} />)}</div>
+            <div className="subsection-heading"><p className="mono-label">Independent practice</p><h3>Personal builds & API experiments</h3></div>
+            <div className="project-grid project-grid--compact">{personalProjects.map((project) => <ProjectCard key={project.name} project={project} compact />)}</div>
+          </section>
+
+          <section id="experience" className="content-section">
+            <SectionTitle number="03" first="How" second="I work" />
+            <div className="experience-list">
+              <article>
+                <div><p className="mono-label">Current chapter</p><h3>PwC AC Manila</h3></div>
+                <div><h4>Senior Associate Software Engineer</h4><p>Building full-stack solutions and helping teams turn complex requirements into maintainable software.</p></div>
+              </article>
+              <article>
+                <div><p className="mono-label">Engineering approach</p><h3>End-to-end ownership</h3></div>
+                <div><h4>From interface to infrastructure</h4><p>I work across front-end, APIs, integrations, databases, performance, and the practical details needed to ship.</p></div>
+              </article>
+              <article>
+                <div><p className="mono-label">Toolbox</p><h3>Stack agnostic</h3></div>
+                <div><h4>Choose the right tool</h4><p>React, Angular, TypeScript, Java, Spring Boot, C#, GraphQL, and microservice architecture.</p></div>
+              </article>
+            </div>
+          </section>
+
+          <section className="contact-section">
+            <p className="mono-label">Have a project in mind?</p>
+            <h2>Let's build something that lasts.</h2>
+            <div className="contact-actions">
+              <a href="mailto:johnalbertpresentacion@gmail.com">Start a conversation</a>
+              <a href={`${process.env.PUBLIC_URL}/Resume_JATPresentacion.pdf`} download>Download résumé</a>
+            </div>
+          </section>
+
+          <footer className="site-footer">
+            <a href="#top"><FontAwesomeIcon icon={faSkull} /> アルバート</a>
+            <p>© {new Date().getFullYear()} John Albert T. Presentacion</p>
+            <a href="#top">Back to top ↑</a>
+          </footer>
         </div>
-      </CenteredContainer>
-    </div>
-  );
-};
+      </div>
+    </main>
+  </div>
+);
 
 export default LandingPage;

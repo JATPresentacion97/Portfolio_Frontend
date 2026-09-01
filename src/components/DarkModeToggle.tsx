@@ -6,7 +6,7 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 // Global styles that respond to the current theme
 const GlobalStyle = createGlobalStyle`
   html {
-    color-scheme: ${(props) => props.theme.background === '#000000' ? 'dark' : 'light'};
+    color-scheme: ${(props) => props.theme.background === '#1c1714' ? 'dark' : 'light'};
     --theme-background: ${(props) => props.theme.background};
     --theme-color: ${(props) => props.theme.color};
   }
@@ -71,10 +71,10 @@ interface ThemeProviderWrapperProps {
 
 // Provider component to wrap your app and manage theme state
 export const ThemeProviderWrapper: React.FC<ThemeProviderWrapperProps> = ({ children }) => {
-  // Initialize theme state from localStorage or default to false (light mode)
+  // Initialize theme state from localStorage or use the dark editorial theme.
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     const savedTheme = localStorage.getItem('dark-mode');
-    return savedTheme ? JSON.parse(savedTheme) : false;
+    return savedTheme ? JSON.parse(savedTheme) : true;
   });
 
   // Save the theme preference to localStorage whenever it changes
