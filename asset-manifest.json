@@ -1,30 +1,30 @@
 {
   "files": {
     "main.css": "/Portfolio_Frontend/static/css/main.c26a452d.css",
-    "main.js": "/Portfolio_Frontend/static/js/main.11acbe43.js",
+    "main.js": "/Portfolio_Frontend/static/js/main.82adc481.js",
     "static/media/profile-portrait.png": "/Portfolio_Frontend/static/media/profile-portrait.902b25f2ed447c34f691.png",
-    "static/media/AccountServiceAPI.jpeg": "/Portfolio_Frontend/static/media/AccountServiceAPI.373561d124cd1810d83d.jpeg",
-    "static/media/BlogAPI.jpeg": "/Portfolio_Frontend/static/media/BlogAPI.4f17a7d9c444d20d456a.jpeg",
-    "static/media/WeatherAPI.jpeg": "/Portfolio_Frontend/static/media/WeatherAPI.4d1b1a411e402e26fea4.jpeg",
-    "static/media/EcommerceManagementAPI.jpeg": "/Portfolio_Frontend/static/media/EcommerceManagementAPI.130ebd3be4e6c5c723d6.jpeg",
-    "static/media/PatientRecordManagementFrontend.jpeg": "/Portfolio_Frontend/static/media/PatientRecordManagementFrontend.219f3da3c62536437ced.jpeg",
-    "static/media/PorfolioFrontend.jpeg": "/Portfolio_Frontend/static/media/PorfolioFrontend.45e0067a04884f969baf.jpeg",
-    "static/media/WalletManagementAPI.jpeg": "/Portfolio_Frontend/static/media/WalletManagementAPI.ddaf6c082dcede2fec1c.jpeg",
-    "static/media/PatientRecordManagementAPI.jpeg": "/Portfolio_Frontend/static/media/PatientRecordManagementAPI.1bc92cecd0b15ee884c4.jpeg",
-    "static/media/TaskManagementAPI.jpeg": "/Portfolio_Frontend/static/media/TaskManagementAPI.ea836a47851d07b28222.jpeg",
-    "static/media/MetroBank.jpeg": "/Portfolio_Frontend/static/media/MetroBank.5060a65d77406780ac1c.jpeg",
-    "static/media/Manulife.jpeg": "/Portfolio_Frontend/static/media/Manulife.24e76519363046111f85.jpeg",
-    "static/media/SmartParkingAPI.jpeg": "/Portfolio_Frontend/static/media/SmartParkingAPI.221377c19a4c6d56c642.jpeg",
-    "static/media/Gcrypto.jpeg": "/Portfolio_Frontend/static/media/Gcrypto.08e75c697a1685ca690b.jpeg",
-    "static/media/Encova.jpeg": "/Portfolio_Frontend/static/media/Encova.92ba2d30eddf48e1387e.jpeg",
-    "static/media/Entrego.jpeg": "/Portfolio_Frontend/static/media/Entrego.6f3be224f6898ad2ee20.jpeg",
-    "static/media/CoreNet.jpeg": "/Portfolio_Frontend/static/media/CoreNet.a193316fb87f4742fa21.jpeg",
+    "static/media/WeatherAPI.jpeg": "/Portfolio_Frontend/static/media/WeatherAPI.80f88bd4433df48c5e95.jpeg",
+    "static/media/SmartParkingAPI.jpeg": "/Portfolio_Frontend/static/media/SmartParkingAPI.9e45fbe61c0d39d62a22.jpeg",
+    "static/media/PatientRecordManagementFrontend.jpeg": "/Portfolio_Frontend/static/media/PatientRecordManagementFrontend.b325691430eaf31528c6.jpeg",
+    "static/media/TaskManagementAPI.jpeg": "/Portfolio_Frontend/static/media/TaskManagementAPI.924852e9c22fdc7d8ea7.jpeg",
+    "static/media/Encova.jpeg": "/Portfolio_Frontend/static/media/Encova.2ed1d2e04452edf31253.jpeg",
+    "static/media/Gcrypto.jpeg": "/Portfolio_Frontend/static/media/Gcrypto.e61d621a4024e1d5ffb6.jpeg",
+    "static/media/MetroBank.jpeg": "/Portfolio_Frontend/static/media/MetroBank.da89f2a3c57a3023be51.jpeg",
+    "static/media/AccountServiceAPI.jpeg": "/Portfolio_Frontend/static/media/AccountServiceAPI.812ef6e814677f0a2cc4.jpeg",
+    "static/media/CoreNet.jpeg": "/Portfolio_Frontend/static/media/CoreNet.35312fcd3cd7b7503da6.jpeg",
+    "static/media/WalletManagementAPI.jpeg": "/Portfolio_Frontend/static/media/WalletManagementAPI.48e80b7485b8085f59ad.jpeg",
+    "static/media/PatientRecordManagementAPI.jpeg": "/Portfolio_Frontend/static/media/PatientRecordManagementAPI.55bd518d79ca0ce5e35a.jpeg",
+    "static/media/Manulife.jpeg": "/Portfolio_Frontend/static/media/Manulife.0b8f65fb537a9f24aed8.jpeg",
+    "static/media/BlogAPI.jpeg": "/Portfolio_Frontend/static/media/BlogAPI.7e9e9bb19b34ee861545.jpeg",
+    "static/media/PorfolioFrontend.jpeg": "/Portfolio_Frontend/static/media/PorfolioFrontend.0ba1a395300709166ec0.jpeg",
+    "static/media/EcommerceManagementAPI.jpeg": "/Portfolio_Frontend/static/media/EcommerceManagementAPI.d3d7b053cc79a527d2ef.jpeg",
+    "static/media/Entrego.jpeg": "/Portfolio_Frontend/static/media/Entrego.2ede9b4526bc668ef6d1.jpeg",
     "index.html": "/Portfolio_Frontend/index.html",
     "main.c26a452d.css.map": "/Portfolio_Frontend/static/css/main.c26a452d.css.map",
-    "main.11acbe43.js.map": "/Portfolio_Frontend/static/js/main.11acbe43.js.map"
+    "main.82adc481.js.map": "/Portfolio_Frontend/static/js/main.82adc481.js.map"
   },
   "entrypoints": [
     "static/css/main.c26a452d.css",
-    "static/js/main.11acbe43.js"
+    "static/js/main.82adc481.js"
   ]
 }
