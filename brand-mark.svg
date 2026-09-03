@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">JATP monogram</title>
+  <rect width="64" height="64" rx="8" fill="#1c1714"/>
+  <path d="M15 13h24v25c0 10-6 15-15 15-5 0-9-2-12-5l6-7c2 2 4 3 6 3 3 0 5-2 5-6V22H15z" fill="#ffd495"/>
+  <path d="M42 13h9v40h-9z" fill="#ffd495" opacity=".58"/>
+</svg>
