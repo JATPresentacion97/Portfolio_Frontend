@@ -34,6 +34,7 @@ describe('portfolio', () => {
 
     const primaryNavigation = screen.getByRole('navigation', { name: 'Primary navigation' });
     expect(within(primaryNavigation).getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '#experience');
+    expect(within(primaryNavigation).getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '#contact');
     expect(screen.getByRole('link', { name: 'Skip to main content' })).toHaveAttribute('href', '#main-content');
     screen.getAllByRole('link', { name: 'Download résumé' }).forEach((link) => {
       expect(link).toHaveAttribute('download');
@@ -45,9 +46,6 @@ describe('portfolio', () => {
     expect(gmailLink).toHaveAttribute('target', '_blank');
     expect(screen.getByRole('link', { name: '+63 966 768 9427' })).toHaveAttribute('href', 'tel:+639667689427');
 
-    const contactNavigation = screen.getByRole('navigation', { name: 'Contact section navigation' });
-    expect(within(contactNavigation).getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '#experience');
-    expect(within(contactNavigation).getByRole('link', { name: 'Work' })).toHaveAttribute('href', '#work');
   });
 
   it('recovers from an invalid stored theme value', () => {

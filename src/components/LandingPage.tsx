@@ -50,7 +50,7 @@ const LandingPage = () => (
         <a href="#experience">Experience</a>
       </div>
       <DarkModeToggle />
-      <a className="nav-hire" href={gmailComposeUrl} target="_blank" rel="noopener noreferrer">Contact</a>
+      <a className="nav-hire" href="#contact">Contact</a>
     </nav>
 
     <main id="main-content" className="site-shell">
@@ -165,13 +165,6 @@ const LandingPage = () => (
               <a href="https://wa.me/639667689427" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
               <a href={`${import.meta.env.BASE_URL}John_Albert_Presentacion_Resume.pdf`} download>Download résumé</a>
             </div>
-            <nav className="contact-navigation" aria-label="Contact section navigation">
-              <span>Explore</span>
-              <a href="#work">Work</a>
-              <a href="#expertise">Expertise</a>
-              <a href="#experience">Experience</a>
-              <a href="#top">Back to top ↑</a>
-            </nav>
           </section>
 
           <footer className="site-footer">
