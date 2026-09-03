@@ -45,7 +45,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .floating-nav a { text-decoration: none; }
 .nav-links { display: flex; align-items: center; }
-.nav-links a, .nav-hire {
+.nav-links a {
   padding: .65rem .8rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: .7rem;
@@ -55,8 +55,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   white-space: nowrap;
 }
 .nav-links a:hover, .nav-links a:focus-visible { background: var(--soft-fill); }
-.nav-hire { border: 2px solid var(--theme-color); }
-.nav-hire:hover, .nav-hire:focus-visible { background: var(--theme-color); color: var(--theme-background); }
 
 .site-shell { width: min(1520px, 100%); margin: 0 auto; padding: 8.5rem var(--page-gutter) 0; }
 .portfolio-layout { display: grid; grid-template-columns: minmax(270px, 340px) minmax(0, 1fr); gap: clamp(3rem, 6vw, 6.5rem); }
@@ -269,7 +267,6 @@ mark { -webkit-box-decoration-break: clone; box-decoration-break: clone; padding
   .floating-nav { top: .65rem; width: calc(100vw - 1.3rem); justify-content: space-between; }
   .nav-links { gap: 0; }
   .nav-links a { padding-inline: .45rem; font-size: .58rem; letter-spacing: .08em; }
-  .nav-hire { padding: .55rem; font-size: .58rem; letter-spacing: .08em; }
   .identity-card { grid-template-columns: 1fr; }
   .identity-art { min-height: 250px; }
   .identity-art > img { min-height: 250px; }

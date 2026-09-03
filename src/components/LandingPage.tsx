@@ -48,9 +48,9 @@ const LandingPage = () => (
         <a href="#work">Work</a>
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
       </div>
       <DarkModeToggle />
-      <a className="nav-hire" href="#contact">Contact</a>
     </nav>
 
     <main id="main-content" className="site-shell">
