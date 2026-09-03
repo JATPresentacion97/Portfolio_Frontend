@@ -33,6 +33,16 @@ type Project = {
   description: string;
 };
 
+type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  project: string;
+  description: string;
+  technologies: string[];
+};
+
 const professionalProjects: Project[] = [
   { name: 'Globe Case Management System', image: globeCaseManagement, url: 'https://www.ncs.co/en-sg/', category: 'Telecommunications · NCS', description: 'Backend services and integrations for Globe Telecom trouble-ticket workflows covering service outages and customer concerns.' },
   { name: 'CoreNet', image: corenet, url: 'https://www.corenet.gov.sg/general/e-info.aspx', category: 'Government platform', description: 'A professional delivery supporting digital services and complex public-sector workflows.' },
@@ -69,6 +79,81 @@ const socialLinks = [
 ];
 
 const skills = ['Angular', 'React', 'TypeScript', 'Spring Boot', 'Java', 'Microservices', 'C#', 'GraphQL'];
+
+const experiences: Experience[] = [
+  {
+    company: 'NCS Group',
+    role: 'Senior Solutions Architect',
+    period: 'Oct 2025 — Present',
+    location: 'BGC, Taguig',
+    project: 'Globe Telecom · Case Management System',
+    description: 'Designing Java and Spring Boot services and enterprise integrations for end-to-end trouble-ticket workflows. I work across API lifecycle design, validation, service mappings, defect resolution, and production-ready delivery with QA, architecture, and business teams.',
+    technologies: ['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'System Integration'],
+  },
+  {
+    company: 'PwC Acceleration Center Manila',
+    role: 'Senior Software Engineer',
+    period: 'Dec 2024 — Sep 2025',
+    location: 'BGC, Taguig',
+    project: 'Encova · Guidewire PolicyCenter',
+    description: 'Developed insurance product models and application functionality in Guidewire PolicyCenter. Partnered with PwC Shanghai engineers on solution design, implementation, testing, reviews, troubleshooting, and mentoring junior developers.',
+    technologies: ['Guidewire', 'PolicyCenter', 'Gosu', 'Java', 'XML'],
+  },
+  {
+    company: 'Pan Asia Resources',
+    role: 'Senior Software Engineer',
+    period: 'Jan 2024 — Dec 2024',
+    location: 'BGC, Taguig',
+    project: 'Singapore Government · ACRA',
+    description: 'Built and maintained enterprise functionality for Singapore’s ACRA system, translating client requirements into reliable features, resolving defects, optimizing code, reviewing pull requests, and supporting junior engineers through Agile delivery.',
+    technologies: ['Java', 'Spring Boot MVC', 'React', 'TypeScript', 'REST APIs'],
+  },
+  {
+    company: 'Yondu',
+    role: 'Senior Software Engineer',
+    period: 'May 2023 — Dec 2023',
+    location: 'Makati',
+    project: 'Entrego · Rider Tracking',
+    description: 'Delivered real-time rider-tracking backend functionality and optimized service flows for reliable logistics data, coordinating implementation, testing, deployment, and post-release support.',
+    technologies: ['Java', 'Spring Boot', 'Microservices', 'REST APIs'],
+  },
+  {
+    company: 'Collabera Tech Inc.',
+    role: 'Senior Software Engineer',
+    period: 'Jan 2022 — May 2023',
+    location: 'Makati',
+    project: 'GCash · GCrypto',
+    description: 'Developed services and APIs for cryptocurrency transactions and account management. Integrated backend services with the GCash ecosystem and supported security, monitoring, troubleshooting, and testing.',
+    technologies: ['MuleSoft', 'Java', 'APIs', 'System Integration', 'Security'],
+  },
+  {
+    company: 'Novare Tech Inc.',
+    role: 'Senior Software Engineer',
+    period: 'Jan 2021 — Jan 2022',
+    location: 'Taguig',
+    project: 'Metrobank · Mobile Banking',
+    description: 'Developed Java and Spring Boot backend features for the Metrobank mobile app, including easy-loan journeys. Led root-cause analysis, performance improvements, security collaboration, and critical production support.',
+    technologies: ['Java', 'Spring Boot', 'Node.js', 'Performance', 'Security'],
+  },
+  {
+    company: 'Manulife Philippines',
+    role: 'Backend Java Engineer / DevOps Support',
+    period: 'May 2020 — Jan 2021',
+    location: 'Makati',
+    project: 'EPOS · E-Insurance',
+    description: 'Improved the stability of the EPOS insurance platform through backend fixes, production troubleshooting, Jenkins deployments, AWS DevOps support, and automated health monitoring.',
+    technologies: ['Java', 'Jenkins', 'AWS', 'DevOps', 'Monitoring'],
+  },
+  {
+    company: 'NovaSolutions Technology',
+    role: 'Junior Java Developer',
+    period: 'Jan 2019 — May 2020',
+    location: 'Ortigas',
+    project: 'Singapore Government · CoreNet',
+    description: 'Started my career building Java backend components for the CoreNet1-to-CoreNet2 migration, alongside system testing, validation, technical documentation, deployment support, and integration work.',
+    technologies: ['Java', 'Web Development', 'System Testing', 'Integration'],
+  },
+];
 
 const SectionTitle: React.FC<{ number: string; first: string; second: string }> = ({ number, first, second }) => (
   <div className="section-heading">
@@ -136,9 +221,9 @@ const LandingPage: React.FC = () => (
           </header>
 
           <section className="stats-grid" aria-label="Portfolio statistics">
-            <div><strong>7</strong><span>Professional deliveries</span></div>
-            <div><strong>10</strong><span>Personal builds</span></div>
-            <div><strong>Full</strong><span>Stack perspective</span></div>
+            <div><strong>6+</strong><span>Years in engineering</span></div>
+            <div><strong>8</strong><span>Career chapters</span></div>
+            <div><strong>10</strong><span>Independent builds</span></div>
           </section>
 
           <section id="services" className="content-section">
@@ -171,21 +256,34 @@ const LandingPage: React.FC = () => (
           </section>
 
           <section id="experience" className="content-section">
-            <SectionTitle number="03" first="How" second="I work" />
-            <div className="experience-list">
-              <article>
-                <div><p className="mono-label">Current chapter · Oct 2025–Present</p><h3>NCS Group</h3></div>
-                <div><h4>Senior Solutions Architect</h4><p>Designing Java and Spring Boot backend services and enterprise integrations for Globe Telecom's Case Management System, supporting end-to-end trouble-ticket workflows for service outages and customer concerns.</p></div>
-              </article>
-              <article>
-                <div><p className="mono-label">Engineering approach</p><h3>End-to-end ownership</h3></div>
-                <div><h4>From interface to infrastructure</h4><p>I work across front-end, APIs, integrations, databases, performance, and the practical details needed to ship.</p></div>
-              </article>
-              <article>
-                <div><p className="mono-label">Toolbox</p><h3>Stack agnostic</h3></div>
-                <div><h4>Choose the right tool</h4><p>React, Angular, TypeScript, Java, Spring Boot, C#, GraphQL, and microservice architecture.</p></div>
-              </article>
+            <SectionTitle number="03" first="Career" second="timeline" />
+            <p className="section-intro">Six-plus years delivering enterprise software across telecommunications, insurance, government, logistics, fintech, and banking.</p>
+            <div className="experience-timeline">
+              {experiences.map((experience, index) => (
+                <article className="experience-card" key={`${experience.company}-${experience.period}`}>
+                  <div className="experience-marker" aria-hidden="true">
+                    <span>{String(experiences.length - index).padStart(2, '0')}</span>
+                  </div>
+                  <div className="experience-meta">
+                    <p className="mono-label">{experience.period}</p>
+                    <h3>{experience.company}</h3>
+                    <p>{experience.location}</p>
+                  </div>
+                  <div className="experience-details">
+                    <p className="experience-project">{experience.project}</p>
+                    <h4>{experience.role}</h4>
+                    <p className="experience-description">{experience.description}</p>
+                    <ul className="technology-list" aria-label={`Technologies used at ${experience.company}`}>
+                      {experience.technologies.map((technology) => <li key={technology}>{technology}</li>)}
+                    </ul>
+                  </div>
+                </article>
+              ))}
             </div>
+            <aside className="education-card">
+              <p className="mono-label">Education · 2014 — 2019</p>
+              <div><h3>Far Eastern University Institute of Technology</h3><p>Bachelor of Science in Computer Science<br />Specialization in Software Engineering</p></div>
+            </aside>
           </section>
 
           <section className="contact-section">
