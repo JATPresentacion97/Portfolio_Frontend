@@ -1,0 +1,53 @@
+import { fireEvent, render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import App from './App';
+import { caseStudies, experiences } from './data/portfolio';
+
+describe('portfolio', () => {
+  it('renders the senior-engineering positioning and every career chapter', () => {
+    render(<App />);
+
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('EnterpriseEngineer');
+    expect(screen.getByText('Senior Solutions Architect · Senior Java Backend Engineer')).toBeInTheDocument();
+
+    experiences.forEach(({ company }) => {
+      expect(screen.getByRole('heading', { name: company })).toBeInTheDocument();
+    });
+  });
+
+  it('renders five detailed case studies with safe external links', () => {
+    const { container } = render(<App />);
+
+    caseStudies.forEach(({ name }) => {
+      expect(screen.getByRole('heading', { name: new RegExp(`^${name}`) })).toBeInTheDocument();
+    });
+
+    expect(screen.getAllByText('Challenge')).toHaveLength(caseStudies.length);
+    container.querySelectorAll<HTMLAnchorElement>('a[target="_blank"]').forEach((link) => {
+      expect(link.rel).toContain('noopener');
+      expect(link.rel).toContain('noreferrer');
+    });
+  });
+
+  it('keeps essential navigation and downloads available', () => {
+    render(<App />);
+
+    expect(screen.getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '#experience');
+    expect(screen.getByRole('link', { name: 'Skip to main content' })).toHaveAttribute('href', '#main-content');
+    screen.getAllByRole('link', { name: 'Download résumé' }).forEach((link) => {
+      expect(link).toHaveAttribute('download');
+      expect(link.getAttribute('href')).toMatch(/John_Albert_Presentacion_Resume\.pdf$/);
+    });
+  });
+
+  it('recovers from an invalid stored theme value', () => {
+    window.localStorage.setItem('dark-mode', 'not-json');
+
+    expect(() => render(<App />)).not.toThrow();
+    const toggle = screen.getByRole('button', { name: 'Switch to light mode' });
+    fireEvent.click(toggle);
+
+    expect(window.localStorage.getItem('dark-mode')).toBe('false');
+    expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toBeInTheDocument();
+  });
+});

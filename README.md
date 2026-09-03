@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# John Albert Presentacion — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive portfolio for John Albert Presentacion, Senior Solutions Architect and Senior Java Backend Engineer. It presents selected case studies, enterprise experience, technical capabilities, and contact information.
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+- React 19 and TypeScript
+- Vite 8
+- styled-components for theme state and global theme tokens
+- Vitest and Testing Library
+- GitHub Pages deployment
 
-### `npm start`
+## Local development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Requirements: Node.js 22+ and npm 11+.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm ci
+npm run dev
+```
 
-### `npm test`
+The development server prints its local URL when it starts.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Quality checks
 
-### `npm run build`
+```bash
+npm run verify
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This runs ESLint, the test suite, TypeScript checking, and a production build. Pull requests and pushes to `master` run the same checks through GitHub Actions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Editing portfolio content
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Career history, skills, and case studies: `src/data/portfolio.ts`
+- Page composition and contact links: `src/components/LandingPage.tsx`
+- Case-study presentation: `src/components/CaseStudyCard.tsx`
+- Theme behavior: `src/components/DarkModeToggle.tsx`
+- Visual system and responsive layout: `src/styles/MainPage.css`
+- Search and social metadata: `index.html`
 
-### `npm run eject`
+Images displayed by the site live in `src/assets/optimized`. Keep new images compressed and include explicit dimensions in rendered markup to avoid layout shift.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Production build and deployment
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+npm run deploy
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Vite writes the production site to `dist`. The deploy command verifies the project first and publishes `dist` to the `gh-pages` branch. The configured base path is `/Portfolio_Frontend/`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Live site: [jatpresentacion97.github.io/Portfolio_Frontend](https://jatpresentacion97.github.io/Portfolio_Frontend/)

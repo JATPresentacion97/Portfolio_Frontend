@@ -1,0 +1,147 @@
+import encovaImage from '../assets/optimized/encova-policycenter.avif';
+import gcryptoImage from '../assets/optimized/gcrypto.avif';
+import globeImage from '../assets/optimized/globe-case-management.avif';
+import patientRecordsImage from '../assets/optimized/patient-records.avif';
+import portfolioImage from '../assets/optimized/portfolio.avif';
+import type { CaseStudy, Experience } from '../types/portfolio';
+
+export const skills = [
+  'Java',
+  'Spring Boot',
+  'Microservices',
+  'REST APIs',
+  'Guidewire',
+  'Gosu',
+  'MuleSoft',
+  'AWS',
+  'React',
+  'TypeScript',
+];
+
+export const caseStudies: CaseStudy[] = [
+  {
+    name: 'Globe Case Management',
+    image: globeImage,
+    url: 'https://www.globe.com.ph/about-us/newsroom/business/globe-strengthens-enteprise-architecture-ict-capabilities',
+    category: 'Telecommunications · Enterprise integration',
+    challenge: 'Support a connected trouble-ticket lifecycle across customer experience, case management, and downstream operational services.',
+    contribution: 'Designed Java and Spring Boot integrations, API mappings, validation rules, resolution workflows, and defect fixes across SIT and staging.',
+    outcome: 'Helped move create, update, retrieve, list, and close workflows toward reliable, production-ready delivery.',
+    technologies: ['Java', 'Spring Boot', 'Microservices', 'REST APIs'],
+  },
+  {
+    name: 'Encova PolicyCenter',
+    image: encovaImage,
+    url: 'https://www.encova.com/',
+    category: 'Insurance · Product configuration',
+    challenge: 'Translate insurance product requirements into maintainable Guidewire PolicyCenter behavior and product models.',
+    contribution: 'Implemented Gosu and Java configuration, APIs, XML integrations, tests, reviews, and defect resolution with a distributed engineering team.',
+    outcome: 'Delivered tested PolicyCenter capabilities while improving team quality through code review and junior-developer guidance.',
+    technologies: ['Guidewire', 'PolicyCenter', 'Gosu', 'Java'],
+  },
+  {
+    name: 'GCash GCrypto',
+    image: gcryptoImage,
+    url: 'https://new.gcash.com/',
+    category: 'Fintech · Backend services',
+    challenge: 'Integrate cryptocurrency transaction and account-management capabilities with a high-traffic financial ecosystem.',
+    contribution: 'Developed Java services and MuleSoft APIs, supporting integration, security, monitoring, troubleshooting, and verification.',
+    outcome: 'Contributed dependable backend flows for cryptocurrency features within the broader GCash platform.',
+    technologies: ['MuleSoft', 'Java', 'APIs', 'Security'],
+  },
+  {
+    name: 'Patient Records System',
+    image: patientRecordsImage,
+    url: 'https://github.com/JATPresentacion97/PatientRecordManagementSystem-Frontend',
+    category: 'Independent · Full-stack application',
+    challenge: 'Organize patient information and common clinical workflows behind a clear, focused interface.',
+    contribution: 'Built the responsive React client and paired it with a dedicated backend repository and structured domain model.',
+    outcome: 'Created an end-to-end reference project demonstrating interface, API, and data-flow ownership.',
+    technologies: ['React', 'TypeScript', 'REST APIs', 'Java'],
+  },
+  {
+    name: 'Portfolio Platform',
+    image: portfolioImage,
+    url: 'https://github.com/JATPresentacion97/Portfolio_Frontend',
+    category: 'Independent · Frontend engineering',
+    challenge: 'Present a long enterprise-engineering career without turning the experience into a dense résumé page.',
+    contribution: 'Designed a responsive editorial system with accessible navigation, theme persistence, structured content, and automated checks.',
+    outcome: 'Built a fast, maintainable portfolio that can evolve through typed content and reusable presentation components.',
+    technologies: ['React', 'TypeScript', 'Vite', 'Vitest'],
+  },
+];
+
+export const experiences: Experience[] = [
+  {
+    company: 'NCS Group',
+    role: 'Senior Solutions Architect',
+    period: 'Oct 2025 — Present',
+    location: 'BGC, Taguig',
+    project: 'Globe Telecom · Case Management System',
+    description: 'Designing Java and Spring Boot services and enterprise integrations for end-to-end trouble-ticket workflows. I work across API lifecycle design, validation, service mappings, defect resolution, and production-ready delivery with QA, architecture, and business teams.',
+    technologies: ['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'System Integration'],
+  },
+  {
+    company: 'PwC Acceleration Center Manila',
+    role: 'Senior Software Engineer',
+    period: 'Dec 2024 — Sep 2025',
+    location: 'BGC, Taguig',
+    project: 'Encova · Guidewire PolicyCenter',
+    description: 'Developed insurance product models and application functionality in Guidewire PolicyCenter. Partnered with PwC Shanghai engineers on solution design, implementation, testing, reviews, troubleshooting, and mentoring junior developers.',
+    technologies: ['Guidewire', 'PolicyCenter', 'Gosu', 'Java', 'XML'],
+  },
+  {
+    company: 'Pan Asia Resources',
+    role: 'Senior Software Engineer',
+    period: 'Jan 2024 — Dec 2024',
+    location: 'BGC, Taguig',
+    project: 'Singapore Government · ACRA',
+    description: 'Built and maintained enterprise functionality for Singapore’s ACRA system, translating client requirements into reliable features, resolving defects, optimizing code, reviewing pull requests, and supporting junior engineers through Agile delivery.',
+    technologies: ['Java', 'Spring Boot MVC', 'React', 'TypeScript', 'REST APIs'],
+  },
+  {
+    company: 'Yondu',
+    role: 'Senior Software Engineer',
+    period: 'May 2023 — Dec 2023',
+    location: 'Makati',
+    project: 'Entrego · Rider Tracking',
+    description: 'Delivered real-time rider-tracking backend functionality and optimized service flows for reliable logistics data, coordinating implementation, testing, deployment, and post-release support.',
+    technologies: ['Java', 'Spring Boot', 'Microservices', 'REST APIs'],
+  },
+  {
+    company: 'Collabera Tech Inc.',
+    role: 'Senior Software Engineer',
+    period: 'Jan 2022 — May 2023',
+    location: 'Makati',
+    project: 'GCash · GCrypto',
+    description: 'Developed services and APIs for cryptocurrency transactions and account management. Integrated backend services with the GCash ecosystem and supported security, monitoring, troubleshooting, and testing.',
+    technologies: ['MuleSoft', 'Java', 'APIs', 'System Integration', 'Security'],
+  },
+  {
+    company: 'Novare Tech Inc.',
+    role: 'Senior Software Engineer',
+    period: 'Jan 2021 — Jan 2022',
+    location: 'Taguig',
+    project: 'Metrobank · Mobile Banking',
+    description: 'Developed Java and Spring Boot backend features for the Metrobank mobile app, including easy-loan journeys. Led root-cause analysis, performance improvements, security collaboration, and critical production support.',
+    technologies: ['Java', 'Spring Boot', 'Node.js', 'Performance', 'Security'],
+  },
+  {
+    company: 'Manulife Philippines',
+    role: 'Backend Java Engineer / DevOps Support',
+    period: 'May 2020 — Jan 2021',
+    location: 'Makati',
+    project: 'EPOS · E-Insurance',
+    description: 'Improved the stability of the EPOS insurance platform through backend fixes, production troubleshooting, Jenkins deployments, AWS DevOps support, and automated health monitoring.',
+    technologies: ['Java', 'Jenkins', 'AWS', 'DevOps', 'Monitoring'],
+  },
+  {
+    company: 'NovaSolutions Technology',
+    role: 'Junior Java Developer',
+    period: 'Jan 2019 — May 2020',
+    location: 'Ortigas',
+    project: 'Singapore Government · CoreNet',
+    description: 'Started my career building Java backend components for the CoreNet1-to-CoreNet2 migration, alongside system testing, validation, technical documentation, deployment support, and integration work.',
+    technologies: ['Java', 'Web Development', 'System Testing', 'Integration'],
+  },
+];

@@ -1,9 +1,8 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { lightTheme, darkTheme } from '../theme/Theme';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
-// Global styles that respond to the current theme
 const GlobalStyle = createGlobalStyle`
   html {
     color-scheme: ${(props) => props.theme.background === '#1c1714' ? 'dark' : 'light'};
@@ -18,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// Styled button component for the toggle switch
 const Button = styled.button`
   padding: 0.5rem;
   background: transparent;
@@ -33,67 +31,59 @@ const Button = styled.button`
   &:focus-visible {
     background: ${(props) => props.theme.color};
     color: ${(props) => props.theme.background};
-    outline: none;
+    outline: 3px solid ${(props) => props.theme.color};
+    outline-offset: 3px;
   }
 `;
 
-// Define the shape of the ThemeContext value
 interface ThemeContextType {
   isDarkMode: boolean;
   toggleTheme: () => void;
 }
 
-// Create a Context with default values
 const ThemeContext = createContext<ThemeContextType>({
   isDarkMode: false,
   toggleTheme: () => { },
 });
 
-// Custom hook to consume the theme context easily
-export const useTheme = () => useContext(ThemeContext);
+const useTheme = () => useContext(ThemeContext);
 
-// Dark mode toggle button component
-const DarkModeToggle: React.FC = () => {
-  // Get current theme state and toggle function from context
+const DarkModeToggle = () => {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
     <Button onClick={toggleTheme} aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}>
-      {/* Show sun icon if dark mode is enabled, moon if light mode */}
       {isDarkMode ? <FaSun /> : <FaMoon />}
     </Button>
   );
 };
 
 interface ThemeProviderWrapperProps {
-  children: ReactNode;  // Accept any React nodes as children
+  children: ReactNode;
 }
 
-// Provider component to wrap your app and manage theme state
-export const ThemeProviderWrapper: React.FC<ThemeProviderWrapperProps> = ({ children }) => {
-  // Initialize theme state from localStorage or use the dark editorial theme.
+export const ThemeProviderWrapper = ({ children }: ThemeProviderWrapperProps) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    const savedTheme = localStorage.getItem('dark-mode');
-    return savedTheme ? JSON.parse(savedTheme) : true;
+    const savedTheme = window.localStorage.getItem('dark-mode');
+    if (savedTheme === 'true') return true;
+    if (savedTheme === 'false') return false;
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? true;
   });
 
-  // Save the theme preference to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem('dark-mode', JSON.stringify(isDarkMode));
+    window.localStorage.setItem('dark-mode', JSON.stringify(isDarkMode));
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', isDarkMode ? darkTheme.background : lightTheme.background);
   }, [isDarkMode]);
 
-  // Function to toggle between dark and light modes
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);
   };
 
   return (
-    // Provide the theme state and toggle function to the component tree
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
-      {/* ThemeProvider injects theme variables into styled-components */}
       <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-        <GlobalStyle /> {/* Apply global styles based on the current theme */}
-        {children} {/* Render child components */}
+        <GlobalStyle />
+        {children}
       </ThemeProvider>
     </ThemeContext.Provider>
   );
