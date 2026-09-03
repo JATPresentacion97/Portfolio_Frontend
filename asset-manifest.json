@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/Portfolio_Frontend/static/css/main.c26a452d.css",
-    "main.js": "/Portfolio_Frontend/static/js/main.82adc481.js",
+    "main.css": "/Portfolio_Frontend/static/css/main.d58477a8.css",
+    "main.js": "/Portfolio_Frontend/static/js/main.ddb8a1f0.js",
     "static/media/profile-portrait.png": "/Portfolio_Frontend/static/media/profile-portrait.902b25f2ed447c34f691.png",
     "static/media/WeatherAPI.jpeg": "/Portfolio_Frontend/static/media/WeatherAPI.80f88bd4433df48c5e95.jpeg",
     "static/media/SmartParkingAPI.jpeg": "/Portfolio_Frontend/static/media/SmartParkingAPI.9e45fbe61c0d39d62a22.jpeg",
     "static/media/PatientRecordManagementFrontend.jpeg": "/Portfolio_Frontend/static/media/PatientRecordManagementFrontend.b325691430eaf31528c6.jpeg",
     "static/media/TaskManagementAPI.jpeg": "/Portfolio_Frontend/static/media/TaskManagementAPI.924852e9c22fdc7d8ea7.jpeg",
+    "static/media/GlobeCaseManagement.jpeg": "/Portfolio_Frontend/static/media/GlobeCaseManagement.a8de69fe684fde099088.jpeg",
     "static/media/Encova.jpeg": "/Portfolio_Frontend/static/media/Encova.2ed1d2e04452edf31253.jpeg",
     "static/media/Gcrypto.jpeg": "/Portfolio_Frontend/static/media/Gcrypto.e61d621a4024e1d5ffb6.jpeg",
     "static/media/MetroBank.jpeg": "/Portfolio_Frontend/static/media/MetroBank.da89f2a3c57a3023be51.jpeg",
@@ -20,11 +21,11 @@
     "static/media/EcommerceManagementAPI.jpeg": "/Portfolio_Frontend/static/media/EcommerceManagementAPI.d3d7b053cc79a527d2ef.jpeg",
     "static/media/Entrego.jpeg": "/Portfolio_Frontend/static/media/Entrego.2ede9b4526bc668ef6d1.jpeg",
     "index.html": "/Portfolio_Frontend/index.html",
-    "main.c26a452d.css.map": "/Portfolio_Frontend/static/css/main.c26a452d.css.map",
-    "main.82adc481.js.map": "/Portfolio_Frontend/static/js/main.82adc481.js.map"
+    "main.d58477a8.css.map": "/Portfolio_Frontend/static/css/main.d58477a8.css.map",
+    "main.ddb8a1f0.js.map": "/Portfolio_Frontend/static/js/main.ddb8a1f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.c26a452d.css",
-    "static/js/main.82adc481.js"
+    "static/css/main.d58477a8.css",
+    "static/js/main.ddb8a1f0.js"
   ]
 }
