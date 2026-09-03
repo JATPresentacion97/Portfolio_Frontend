@@ -8,6 +8,9 @@ import CaseStudyCard from './CaseStudyCard';
 import DarkModeToggle from './DarkModeToggle';
 import SectionTitle from './SectionTitle';
 
+const emailAddress = 'johnalbertpresentacion@gmail.com';
+const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=Portfolio%20inquiry`;
+
 const capabilities = [
   {
     icon: faLayerGroup,
@@ -46,7 +49,7 @@ const LandingPage = () => (
         <a href="#experience">Experience</a>
       </div>
       <DarkModeToggle />
-      <a className="nav-hire" href="mailto:johnalbertpresentacion@gmail.com">Contact</a>
+      <a className="nav-hire" href={gmailComposeUrl} target="_blank" rel="noopener noreferrer">Contact</a>
     </nav>
 
     <main id="main-content" className="site-shell">
@@ -152,8 +155,9 @@ const LandingPage = () => (
           <section className="contact-section" id="contact">
             <p className="mono-label">Architecture, backend, or integration challenge?</p>
             <h2>Let's build something dependable.</h2>
+            <p className="contact-email">Email: <a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
             <div className="contact-actions">
-              <a href="mailto:johnalbertpresentacion@gmail.com">Send an email</a>
+              <a href={gmailComposeUrl} target="_blank" rel="noopener noreferrer">Compose in Gmail</a>
               <a href="https://wa.me/639667689427" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
               <a href={`${import.meta.env.BASE_URL}John_Albert_Presentacion_Resume.pdf`} download>Download résumé</a>
             </div>

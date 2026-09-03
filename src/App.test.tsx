@@ -38,6 +38,10 @@ describe('portfolio', () => {
       expect(link).toHaveAttribute('download');
       expect(link.getAttribute('href')).toMatch(/John_Albert_Presentacion_Resume\.pdf$/);
     });
+
+    const gmailLink = screen.getByRole('link', { name: 'Compose in Gmail' });
+    expect(gmailLink).toHaveAttribute('href', expect.stringContaining('to=johnalbertpresentacion@gmail.com'));
+    expect(gmailLink).toHaveAttribute('target', '_blank');
   });
 
   it('recovers from an invalid stored theme value', () => {
