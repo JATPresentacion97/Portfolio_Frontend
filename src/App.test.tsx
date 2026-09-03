@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import App from './App';
 import { caseStudies, experiences } from './data/portfolio';
@@ -32,7 +32,8 @@ describe('portfolio', () => {
   it('keeps essential navigation and downloads available', () => {
     render(<App />);
 
-    expect(screen.getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '#experience');
+    const primaryNavigation = screen.getByRole('navigation', { name: 'Primary navigation' });
+    expect(within(primaryNavigation).getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '#experience');
     expect(screen.getByRole('link', { name: 'Skip to main content' })).toHaveAttribute('href', '#main-content');
     screen.getAllByRole('link', { name: 'Download résumé' }).forEach((link) => {
       expect(link).toHaveAttribute('download');
@@ -43,6 +44,10 @@ describe('portfolio', () => {
     expect(gmailLink).toHaveAttribute('href', expect.stringContaining('to=johnalbertpresentacion@gmail.com'));
     expect(gmailLink).toHaveAttribute('target', '_blank');
     expect(screen.getByRole('link', { name: '+63 966 768 9427' })).toHaveAttribute('href', 'tel:+639667689427');
+
+    const contactNavigation = screen.getByRole('navigation', { name: 'Contact section navigation' });
+    expect(within(contactNavigation).getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '#experience');
+    expect(within(contactNavigation).getByRole('link', { name: 'Work' })).toHaveAttribute('href', '#work');
   });
 
   it('recovers from an invalid stored theme value', () => {
