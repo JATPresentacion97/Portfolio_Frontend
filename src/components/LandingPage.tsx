@@ -6,22 +6,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare, faCode, faGaugeHigh, faLayerGroup, faSkull } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-import corenet from '../assets/ProfessionalShowcaseAssets/CoreNet.jpeg';
-import encova from '../assets/ProfessionalShowcaseAssets/Encova.jpeg';
-import entrego from '../assets/ProfessionalShowcaseAssets/Entrego.jpeg';
-import gcrypto from '../assets/ProfessionalShowcaseAssets/Gcrypto.jpeg';
-import manulife from '../assets/ProfessionalShowcaseAssets/Manulife.jpeg';
-import metrobank from '../assets/ProfessionalShowcaseAssets/MetroBank.jpeg';
-import AccountServiceAPI from '../assets/PersonalShowcaseAssets/AccountServiceAPI.jpeg';
-import BlogAPI from '../assets/PersonalShowcaseAssets/BlogAPI.jpeg';
-import EcommerceManagementAPI from '../assets/PersonalShowcaseAssets/EcommerceManagementAPI.jpeg';
-import PatientRecordManagementAPI from '../assets/PersonalShowcaseAssets/PatientRecordManagementAPI.jpeg';
-import PatientRecordManagementFrontend from '../assets/PersonalShowcaseAssets/PatientRecordManagementFrontend.jpeg';
-import PortfolioFrontend from '../assets/PersonalShowcaseAssets/PorfolioFrontend.jpeg';
-import SmartParkingAPI from '../assets/PersonalShowcaseAssets/SmartParkingAPI.jpeg';
-import TaskManagementAPI from '../assets/PersonalShowcaseAssets/TaskManagementAPI.jpeg';
-import WalletManagementAPI from '../assets/PersonalShowcaseAssets/WalletManagementAPI.jpeg';
-import WeatherAPI from '../assets/PersonalShowcaseAssets/WeatherAPI.jpeg';
+import corenet from '../assets/ProfessionalShowcaseAssets/Themed/CoreNet.jpeg';
+import encova from '../assets/ProfessionalShowcaseAssets/Themed/Encova.jpeg';
+import entrego from '../assets/ProfessionalShowcaseAssets/Themed/Entrego.jpeg';
+import gcrypto from '../assets/ProfessionalShowcaseAssets/Themed/Gcrypto.jpeg';
+import manulife from '../assets/ProfessionalShowcaseAssets/Themed/Manulife.jpeg';
+import metrobank from '../assets/ProfessionalShowcaseAssets/Themed/MetroBank.jpeg';
+import AccountServiceAPI from '../assets/PersonalShowcaseAssets/Themed/AccountServiceAPI.jpeg';
+import BlogAPI from '../assets/PersonalShowcaseAssets/Themed/BlogAPI.jpeg';
+import EcommerceManagementAPI from '../assets/PersonalShowcaseAssets/Themed/EcommerceManagementAPI.jpeg';
+import PatientRecordManagementAPI from '../assets/PersonalShowcaseAssets/Themed/PatientRecordManagementAPI.jpeg';
+import PatientRecordManagementFrontend from '../assets/PersonalShowcaseAssets/Themed/PatientRecordManagementFrontend.jpeg';
+import PortfolioFrontend from '../assets/PersonalShowcaseAssets/Themed/PorfolioFrontend.jpeg';
+import SmartParkingAPI from '../assets/PersonalShowcaseAssets/Themed/SmartParkingAPI.jpeg';
+import TaskManagementAPI from '../assets/PersonalShowcaseAssets/Themed/TaskManagementAPI.jpeg';
+import WalletManagementAPI from '../assets/PersonalShowcaseAssets/Themed/WalletManagementAPI.jpeg';
+import WeatherAPI from '../assets/PersonalShowcaseAssets/Themed/WeatherAPI.jpeg';
 import profilePortrait from '../assets/profile-portrait.png';
 
 type Project = {
