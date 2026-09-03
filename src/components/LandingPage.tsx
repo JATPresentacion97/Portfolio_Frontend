@@ -9,6 +9,7 @@ import DarkModeToggle from './DarkModeToggle';
 import SectionTitle from './SectionTitle';
 
 const emailAddress = 'johnalbertpresentacion@gmail.com';
+const phoneNumber = '+63 966 768 9427';
 const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=Portfolio%20inquiry`;
 
 const capabilities = [
@@ -155,7 +156,10 @@ const LandingPage = () => (
           <section className="contact-section" id="contact">
             <p className="mono-label">Architecture, backend, or integration challenge?</p>
             <h2>Let's build something dependable.</h2>
-            <p className="contact-email">Email: <a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
+            <address className="contact-details">
+              <span>Email: <a href={`mailto:${emailAddress}`}>{emailAddress}</a></span>
+              <span>Phone: <a href="tel:+639667689427">{phoneNumber}</a></span>
+            </address>
             <div className="contact-actions">
               <a href={gmailComposeUrl} target="_blank" rel="noopener noreferrer">Compose in Gmail</a>
               <a href="https://wa.me/639667689427" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>

@@ -218,8 +218,8 @@ mark { -webkit-box-decoration-break: clone; box-decoration-break: clone; padding
 
 .contact-section { padding: clamp(5rem, 10vw, 9rem) 0; border-top: var(--border-width) solid var(--content-rule); }
 .contact-section h2 { max-width: 950px; margin: 1rem 0 2.5rem; font-size: clamp(3rem, 7vw, 7rem); font-weight: 800; letter-spacing: -.065em; line-height: .9; text-transform: uppercase; }
-.contact-email { margin: -1rem 0 2rem; color: var(--muted-text); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(.72rem, 1.5vw, .88rem); overflow-wrap: anywhere; }
-.contact-email a { color: var(--theme-color); text-underline-offset: .3rem; }
+.contact-details { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; margin: -1rem 0 2rem; color: var(--muted-text); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(.72rem, 1.5vw, .88rem); font-style: normal; overflow-wrap: anywhere; }
+.contact-details a { color: var(--theme-color); text-underline-offset: .3rem; }
 .contact-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
 .contact-actions a {
   padding: .9rem 1.1rem;

@@ -42,6 +42,7 @@ describe('portfolio', () => {
     const gmailLink = screen.getByRole('link', { name: 'Compose in Gmail' });
     expect(gmailLink).toHaveAttribute('href', expect.stringContaining('to=johnalbertpresentacion@gmail.com'));
     expect(gmailLink).toHaveAttribute('target', '_blank');
+    expect(screen.getByRole('link', { name: '+63 966 768 9427' })).toHaveAttribute('href', 'tel:+639667689427');
   });
 
   it('recovers from an invalid stored theme value', () => {
