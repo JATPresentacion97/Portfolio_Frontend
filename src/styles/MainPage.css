@@ -44,7 +44,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   transform: translateX(-50%);
 }
 .floating-nav a { text-decoration: none; }
-.nav-mark { display: grid; width: 2.5rem; height: 2.5rem; place-items: center; font-size: 1.35rem; }
 .nav-links { display: flex; align-items: center; }
 .nav-links a, .nav-hire {
   padding: .65rem .8rem;
@@ -286,10 +285,6 @@ mark { -webkit-box-decoration-break: clone; box-decoration-break: clone; padding
   .hero-actions a { text-align: center; }
   .contact-actions { flex-direction: column; }
   .contact-actions a { text-align: center; }
-}
-
-@media (max-width: 420px) {
-  .nav-mark { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

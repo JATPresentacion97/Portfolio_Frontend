@@ -33,6 +33,7 @@ describe('portfolio', () => {
     render(<App />);
 
     const primaryNavigation = screen.getByRole('navigation', { name: 'Primary navigation' });
+    expect(within(primaryNavigation).getByRole('link', { name: 'Home' })).toHaveAttribute('href', '#top');
     expect(within(primaryNavigation).getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '#experience');
     expect(within(primaryNavigation).getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '#contact');
     expect(screen.getByRole('link', { name: 'Skip to main content' })).toHaveAttribute('href', '#main-content');

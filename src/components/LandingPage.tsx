@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faGaugeHigh, faLayerGroup, faSkull } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faGaugeHigh, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import profilePortrait from '../assets/optimized/profile-portrait.avif';
 import { caseStudies, experiences, skills } from '../data/portfolio';
@@ -43,8 +43,8 @@ const LandingPage = () => (
     <a className="skip-link" href="#main-content">Skip to main content</a>
 
     <nav className="floating-nav" aria-label="Primary navigation">
-      <a className="nav-mark" href="#top" aria-label="Back to top"><FontAwesomeIcon icon={faSkull} /></a>
       <div className="nav-links">
+        <a href="#top">Home</a>
         <a href="#work">Work</a>
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
@@ -168,7 +168,7 @@ const LandingPage = () => (
           </section>
 
           <footer className="site-footer">
-            <a href="#top"><FontAwesomeIcon icon={faSkull} /> アルバート</a>
+            <a href="#top">JATP · Home</a>
             <p>© {new Date().getFullYear()} John Albert T. Presentacion</p>
             <a href="#top">Back to top ↑</a>
           </footer>
