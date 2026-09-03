@@ -10,6 +10,7 @@ import corenet from '../assets/ProfessionalShowcaseAssets/Themed/CoreNet.jpeg';
 import encova from '../assets/ProfessionalShowcaseAssets/Themed/Encova.jpeg';
 import entrego from '../assets/ProfessionalShowcaseAssets/Themed/Entrego.jpeg';
 import gcrypto from '../assets/ProfessionalShowcaseAssets/Themed/Gcrypto.jpeg';
+import globeCaseManagement from '../assets/ProfessionalShowcaseAssets/Themed/GlobeCaseManagement.jpeg';
 import manulife from '../assets/ProfessionalShowcaseAssets/Themed/Manulife.jpeg';
 import metrobank from '../assets/ProfessionalShowcaseAssets/Themed/MetroBank.jpeg';
 import AccountServiceAPI from '../assets/PersonalShowcaseAssets/Themed/AccountServiceAPI.jpeg';
@@ -33,6 +34,7 @@ type Project = {
 };
 
 const professionalProjects: Project[] = [
+  { name: 'Globe Case Management System', image: globeCaseManagement, url: 'https://www.ncs.co/en-sg/', category: 'Telecommunications · NCS', description: 'Backend services and integrations for Globe Telecom trouble-ticket workflows covering service outages and customer concerns.' },
   { name: 'CoreNet', image: corenet, url: 'https://www.corenet.gov.sg/general/e-info.aspx', category: 'Government platform', description: 'A professional delivery supporting digital services and complex public-sector workflows.' },
   { name: 'Encova Insurance', image: encova, url: 'https://www.encova.com/', category: 'Insurance technology', description: 'Customer-facing insurance experiences built for clarity, resilience, and long-term maintainability.' },
   { name: 'Entrego', image: entrego, url: 'https://trackmypackage.net/c/entrego-tracking', category: 'Logistics', description: 'Digital logistics work focused on reliable flows and a smooth customer experience.' },
@@ -130,11 +132,11 @@ const LandingPage: React.FC = () => (
             <p className="hero-kicker">Arigatosaimongtanan — I'm Albert (アルバート), from the Philippines</p>
             <h1>Software<span>Engineer</span></h1>
             <p className="hero-lead"><mark>I turn complex requirements into clear products.</mark> From thoughtful interfaces to dependable APIs.</p>
-            <p className="hero-current">Currently building at <a href="https://www.pwc.com/ph/en.html" target="_blank" rel="noopener noreferrer">PwC AC Manila</a></p>
+            <p className="hero-current">Currently building telecom systems at <a href="https://www.ncs.co/en-sg/" target="_blank" rel="noopener noreferrer">NCS Group</a></p>
           </header>
 
           <section className="stats-grid" aria-label="Portfolio statistics">
-            <div><strong>6</strong><span>Professional deliveries</span></div>
+            <div><strong>7</strong><span>Professional deliveries</span></div>
             <div><strong>10</strong><span>Personal builds</span></div>
             <div><strong>Full</strong><span>Stack perspective</span></div>
           </section>
@@ -162,7 +164,7 @@ const LandingPage: React.FC = () => (
 
           <section id="work" className="content-section">
             <SectionTitle number="02" first="Selected" second="work" />
-            <p className="section-intro">Professional products delivered across government, logistics, insurance, fintech, and digital banking.</p>
+            <p className="section-intro">Professional products delivered across telecommunications, government, logistics, insurance, fintech, and digital banking.</p>
             <div className="project-grid">{professionalProjects.map((project) => <ProjectCard key={project.name} project={project} />)}</div>
             <div className="subsection-heading"><p className="mono-label">Independent practice</p><h3>Personal builds & API experiments</h3></div>
             <div className="project-grid project-grid--compact">{personalProjects.map((project) => <ProjectCard key={project.name} project={project} compact />)}</div>
@@ -172,8 +174,8 @@ const LandingPage: React.FC = () => (
             <SectionTitle number="03" first="How" second="I work" />
             <div className="experience-list">
               <article>
-                <div><p className="mono-label">Current chapter</p><h3>PwC AC Manila</h3></div>
-                <div><h4>Senior Associate Software Engineer</h4><p>Building full-stack solutions and helping teams turn complex requirements into maintainable software.</p></div>
+                <div><p className="mono-label">Current chapter · Oct 2025–Present</p><h3>NCS Group</h3></div>
+                <div><h4>Senior Solutions Architect</h4><p>Designing Java and Spring Boot backend services and enterprise integrations for Globe Telecom's Case Management System, supporting end-to-end trouble-ticket workflows for service outages and customer concerns.</p></div>
               </article>
               <article>
                 <div><p className="mono-label">Engineering approach</p><h3>End-to-end ownership</h3></div>

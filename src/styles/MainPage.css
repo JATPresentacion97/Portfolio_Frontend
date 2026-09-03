@@ -191,6 +191,12 @@ mark { -webkit-box-decoration-break: clone; box-decoration-break: clone; padding
 .project-grid--compact { gap-block: 3.5rem; }
 .project-card--compact .project-image-wrap { aspect-ratio: 16 / 10; }
 
+@media (min-width: 801px) {
+  .project-grid:not(.project-grid--compact) > .project-card:first-child { grid-column: 1 / -1; }
+  .project-grid:not(.project-grid--compact) > .project-card:first-child .project-image-wrap { aspect-ratio: 2 / 1; }
+  .project-grid:not(.project-grid--compact) > .project-card:first-child .project-description { max-width: 48rem; }
+}
+
 .experience-list { margin-top: 3.5rem; border-block: var(--border-width) solid var(--content-rule); }
 .experience-list article { display: grid; grid-template-columns: minmax(210px, 1fr) 2fr; gap: 2rem; padding: 2.5rem 0; }
 .experience-list article + article { border-top: 2px solid var(--content-rule); }
