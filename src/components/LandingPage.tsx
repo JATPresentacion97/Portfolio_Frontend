@@ -22,6 +22,7 @@ import SmartParkingAPI from '../assets/PersonalShowcaseAssets/SmartParkingAPI.jp
 import TaskManagementAPI from '../assets/PersonalShowcaseAssets/TaskManagementAPI.jpeg';
 import WalletManagementAPI from '../assets/PersonalShowcaseAssets/WalletManagementAPI.jpeg';
 import WeatherAPI from '../assets/PersonalShowcaseAssets/WeatherAPI.jpeg';
+import profilePortrait from '../assets/profile-portrait.png';
 
 type Project = {
   name: string;
@@ -107,8 +108,7 @@ const LandingPage: React.FC = () => (
         <aside className="identity-rail">
           <div className="identity-card">
             <div className="identity-art" aria-hidden="true">
-              <span className="identity-grid" />
-              <FontAwesomeIcon icon={faSkull} />
+              <img src={profilePortrait} alt="" />
               <span className="identity-initials">JATP</span>
             </div>
             <div className="identity-copy">
