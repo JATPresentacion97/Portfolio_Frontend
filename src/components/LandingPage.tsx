@@ -190,8 +190,8 @@ const LandingPage: React.FC = () => (
             <p className="mono-label">Have a project in mind?</p>
             <h2>Let's build something that lasts.</h2>
             <div className="contact-actions">
-              <a href="mailto:johnalbertpresentacion@gmail.com">Start a conversation</a>
-              <a href={`${process.env.PUBLIC_URL}/Resume_JATPresentacion.pdf`} download>Download résumé</a>
+              <a href="https://wa.me/639667689427?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Start a conversation</a>
+              <a href={`${process.env.PUBLIC_URL}/John_Albert_Presentacion_Resume.pdf`} download>Download résumé</a>
             </div>
           </section>
 
